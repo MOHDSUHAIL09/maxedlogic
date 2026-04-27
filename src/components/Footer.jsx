@@ -39,12 +39,14 @@ const Footer = () => {
                       <FaTelegramPlane />
                     </button>
                   </div>
-                  <div className="social-icon d-flex align-items-center">
-                    <a href="#"><FaFacebookF /></a>
-                    <a href="#"><FaTwitter /></a>
-                    <a href="#"><FaDribbble /></a>
-                    <a href="#"><FaInstagram /></a>
-                  </div>
+                  {/* <div className="social-icon d-flex align-items-center"> */}
+                     <ul className="social-box">
+                    <li><a href="https://www.facebook.com/profile.php?id=61584969285044"><i className="fa-brands fa-facebook-f"></i></a></li>                
+                    <li><a href="https://www.instagram.com/maxedlogic__official/?hl=en"><i className="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/maxed-logic-682b3b3b6/       ( Linkindin profile link)"><i className="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
+                  </ul>
+                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -90,7 +92,7 @@ const Footer = () => {
                       <a href="#"><FaEnvelope /></a>
                       <div className="contact-infu">
                         <span>Mail Us:</span>
-                        <h5>info@maxedlogic.com</h5>
+                        <h5>hr@maxedlogic.com</h5>
                       </div>
                     </div>
                     <div className="contact">

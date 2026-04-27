@@ -27,13 +27,6 @@ import { Link } from 'react-router-dom';
 // Service data array
 const servicesData = [
   {
-    id: 1,
-    title: 'Payment Gateway',
-    description: 'A payment gateway securely processes online payments.',
-    icon: <RiSecurePaymentLine />,
-    image: serviceImg01,
-  },
-  {
     id: 2,
     title: 'Software Development',
     description: 'Software development is creating and maintaining applications or systems.',
@@ -60,6 +53,13 @@ const servicesData = [
     description: 'ERP development is building software to manage and integrate business processes.',
     icon: <FaConnectdevelop />,
     image: serviceImg05,
+  },
+   {
+    id: 1,
+    title: 'Payment Gateway',
+    description: 'A payment gateway securely processes online payments.',
+    icon: <RiSecurePaymentLine />,
+    image: serviceImg01,
   },
 ];
 

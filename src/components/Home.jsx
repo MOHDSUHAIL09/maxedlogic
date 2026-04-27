@@ -5,7 +5,7 @@ import About from './About'
 import Service from './Service-details'
 import Sabout from './Sabout.jsx'
 import Choosesection from './Choosesection.jsx'
-import Teamsection from './Teamsection'
+// import Teamsection from './Teamsection'
 import Projects from './Projects.jsx'
 import Clients from './Clients'
 import Blog from './Blog.jsx'
@@ -24,7 +24,7 @@ const App = () => {
     <Service/>
     <Sabout/>
     <Choosesection/>
-    <Teamsection/>
+    {/* <Teamsection/> */}
     <Projects/>
     <Clients/>
     <Blog/>

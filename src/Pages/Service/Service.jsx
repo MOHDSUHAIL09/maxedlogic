@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  FaArrowRight, 
   FaCode, 
   FaLock, 
   FaPaintBrush, 
@@ -12,10 +11,11 @@ import {
   FaNetworkWired,
   FaLongArrowAltRight, 
   FaComments,
-  FaThumbsUp
+  FaThumbsUp,
+  FaAngleDoubleRight
 } from 'react-icons/fa';
 import breadcrumbImg from '../../assets/img/breadcrumb.jpg';
-import serviceImg from '../../assets/img/service/08.jpg';      // image import kiya
+// import serviceImg from '../../assets/img/service/08.jpg';      // image import kiya
 import processShape6 from '../../assets/img/process/shape-6.png';
 import processShape7 from '../../assets/img/process/shape-7.png';
 
@@ -58,7 +58,7 @@ const Service = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <FaArrowRight />
+                 <FaAngleDoubleRight/>
                 </li>
                 <li>Services</li>
               </ul>
@@ -85,19 +85,19 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="200ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaCode /></i>
                   </div>
                   <div className="line mb-4" />
                   <h4>
-                    <Link to="/services/web-development">Web Development</Link>
+                    <Link to="/webdevelopment">Web Development</Link>
                   </h4>
                   <p className="pt-3">
                     Back up your database, store in a safe and secure place while still maintaining.
                   </p>
-                  <Link to="/servicesdetails" className="infu-btn">
+                  <Link to="/webdevelopment" className="infu-btn">
                     Read More <FaLongArrowAltRight className="arrow-icon" />
                   </Link>
                 </div>
@@ -108,7 +108,7 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="400ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaLock /></i>
@@ -131,7 +131,7 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="600ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaPaintBrush /></i>
@@ -154,7 +154,7 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="800ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaChartLine /></i>
@@ -177,7 +177,7 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="200ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaWrench /></i>
@@ -200,7 +200,7 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="400ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaBrain /></i>
@@ -223,7 +223,7 @@ const Service = () => {
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="600ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaCogs /></i>
@@ -241,12 +241,12 @@ const Service = () => {
                 </div>
               </div>
 
-              {/* Card 8 - यहाँ वही li रखा गया है जैसा आप चाहते हैं */}
+
               <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
                 <div className="signle-service-item wow fadeInUp" data-wow-delay="800ms">
                   <div
                     className="service-bg bg-cover"
-                    style={{ backgroundImage: `url(${serviceImg})` }}
+                    // style={{ backgroundImage: `url(${serviceImg})` }}
                   />
                   <div className="icon">
                     <i className='flaticon-user-experience'><FaNetworkWired /></i>

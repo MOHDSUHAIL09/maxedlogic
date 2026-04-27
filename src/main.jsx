@@ -1,22 +1,42 @@
-import { StrictMode } from 'react';
+import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
-
 
 import Home from './components/Home.jsx';
 import Contact from './Pages/Contact.jsx';
 import Service from "./Pages/Service/Service.jsx";
+import About from './Pages/About/About.jsx';
+import WebDevleopment from './Pages/Components/WebDevleopment.jsx'
+
+// Component to scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+// Wrap App with ScrollToTop
+const AppWithScroll = () => (
+  <>
+    <ScrollToTop />
+    <App />
+  </>
+);
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <AppWithScroll />,
     children: [
       { index: true, element: <Home /> },
       { path: 'contact', element: <Contact /> },
-      { path: 'Service', element: <Service /> },
+      { path: 'service', element: <Service /> },        
+      { path: 'about', element: <About /> },   
+      { path: 'webdevelopment', element: <WebDevleopment/> },          
     ],
   },
 ]);

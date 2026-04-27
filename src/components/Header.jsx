@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {
   FaAngleDown,
   FaSearch,
@@ -71,34 +71,27 @@ const Header = () => {
                           <li>
                             <NavLink to="/">Home</NavLink>
                           </li>
-                          <li><NavLink to="/pages">Pages</NavLink></li>
-
-                        <li className="menu-item-has-children">
-  <NavLink to="/service">
-    Services <i className="fas fa-angle-down"></i>
-  </NavLink>
-  <ul className="submenu">
-    <li><NavLink to="/service">App Development</NavLink></li>
-    <li><NavLink to="/service"> Web Development</NavLink></li>
-    <li><NavLink to="/service"> Social Media Marketing</NavLink></li>
-    <li><NavLink to="/service">Software Development</NavLink></li>
-    <li><NavLink to="/service"> Blockchain Development</NavLink></li>
-    <li><NavLink to="/service"> Business Consulting</NavLink></li>
-    <li><NavLink to="/service">Payment Gateway</NavLink></li>
-    <li><NavLink to="/service">Gaming App Development </NavLink></li>
-  </ul>
-</li>
-
-
-
-
-
-
-
+                          <li><NavLink to="/about">About </NavLink></li>
+                          <li className="menu-item-has-children">
+                            <NavLink to="/service">
+                              Services <i className="fas fa-angle-down"></i>
+                            </NavLink>
+                            <ul className="submenu">
+                              <li className='submenu-item'><NavLink to="/service">App Development</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service"> Web Development</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service"> Social Media Marketing</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service">Software Development</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service"> Blockchain Development</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service"> Business Consulting</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service">Payment Gateway</NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service">Gaming App Development </NavLink></li>
+                            </ul>
+                          </li>
 
                           <li className="has-dropdown"><NavLink to="/projects">Projects</NavLink></li>
-                          <li><NavLink to="/news">News</NavLink></li>
+
                           <li><NavLink to="/contact">Contact</NavLink></li>
+                          <li><NavLink to="#">Blog </NavLink></li>
                         </ul>
                       </nav>
                     </div>
@@ -109,7 +102,7 @@ const Header = () => {
                   </a>
 
                   <div className="header-button d-none d-sm-block">
-                    <a href="#" className="theme-btn black-btn">Get In Touch</a>
+                    <Link to="contact"><a href="#" className="theme-btn black-btn">Get In Touch</a></Link>
                   </div>
 
                   <div className="sidebar">
@@ -178,7 +171,7 @@ const Header = () => {
                     </li>
                     <li>
                       <FaEnvelope className="icon" />
-                      info@maxedlogic.com
+                      hr@maxedlogic.com
                     </li>
 
                     <li>
@@ -188,10 +181,10 @@ const Header = () => {
 
                   </ul>
                   <ul className="social-box">
-                    <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61584969285044"><i className="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/maxedlogic__official/?hl=en"><i className="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/maxed-logic-682b3b3b6/       ( Linkindin profile link)"><i className="fa-brands fa-linkedin-in"></i></a></li>
                     <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i className="fa-brands fa-linkedin-in"></i></a></li>
                   </ul>
                 </div>
               </div>

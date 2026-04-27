@@ -42,10 +42,10 @@ const Blog = () => {
                     <li>12 January, 2025</li>
                   </ul>
                   <h3>
-                    <a href="blogs-details.html">Planning your online business goals with a specialist</a>
+                    <a href="blogs-details.html">Exploring the Exciting Features of Node.js Latest</a>
                   </h3>
                   <p>
-                    Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible
+                    Node.js, the popular runtime environment for executing JavaScript code server-side, continues to evolve with each new version,
                   </p>
                   <a href="blogs-details.html" className="link-btn">
                     Read More <FaLongArrowAltRight />
@@ -68,10 +68,10 @@ const Blog = () => {
                     <li>12 January, 2025</li>
                   </ul>
                   <h3>
-                    <a href="blogs-details.html">Holistic Healing: Exploring Health Coaching Techniques</a>
+                    <a href="blogs-details.html">Flutter: Empowering Mobile App Development with Speed</a>
                   </h3>
                   <p>
-                    Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible
+                    In the fast-paced world of mobile app development, developers are constantly seeking tools and frameworks that enable
                   </p>
                   <a href="blogs-details.html" className="link-btn">
                     Read More <FaLongArrowAltRight />
@@ -94,10 +94,10 @@ const Blog = () => {
                     <li>12 January, 2025</li>
                   </ul>
                   <h3>
-                    <a href="blogs-details.html">The Art of Self-Care: Lessons from Health Coaching</a>
+                    <a href="blogs-details.html">.NET MAUI: Build Cross-Platform Apps with C#</a>
                   </h3>
                   <p>
-                    Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible
+                    seamless integration with scalable backend services built on ASP.NET Core, enabling real‑time sync, security, and cloud readiness.
                   </p>
                   <a href="blogs-details.html" className="link-btn">
                     Read More <FaLongArrowAltRight />

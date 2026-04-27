@@ -5,6 +5,7 @@ import heroBg from '../assets/img/hero/hero-1-1-bg.png';
 import googleImg from '../assets/img/google.png';
 import ratingImg from '../assets/img/rating.png';
 import heroMainImg from '../assets/img/hero/hero-1.png';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -25,7 +26,7 @@ const Hero = () => {
                                 <h1>Empowering Ideas with Technological Excellence</h1>
                                 <p>We are a team of skilled professionals dedicated to providing innovative and effective solutions to your technology needs. We offer a wide range of services and expertise in various fields of information technology.</p>
                                 <div className="hero-button mt-4">
-                                    <a href="causes.html" className="theme-btn">Explore More</a>
+                                 <Link to="/contact" className="theme-btn">Explore More</Link>
                                 </div>
                                 <div className="feedback d-flex mt-xl-5">
                                     <div className="infu">
