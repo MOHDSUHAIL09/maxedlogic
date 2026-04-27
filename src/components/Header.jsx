@@ -15,19 +15,25 @@ import { CgMenuGridR } from "react-icons/cg";
 
 // Import images
 import logo from '../assets/img/logo/black-logo.png';
-import logowhite from '../assets/img/logo/whitelogo.png'
+import logowhite from '../assets/img/logo/whitelogo.png';
 
 const Header = () => {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState({});
   const [isSticky, setIsSticky] = useState(false);
   const [isInfoGroupActive, setIsInfoGroupActive] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // ✅ Added for mobile dropdown
 
   const toggleOffcanvas = () => setIsOffcanvasOpen(!isOffcanvasOpen);
   const closeOffcanvas = () => setIsOffcanvasOpen(false);
 
   const toggleSubmenu = (key) => {
     setOpenSubmenus(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  // ✅ Mobile dropdown toggle
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
   };
 
   useEffect(() => {
@@ -71,7 +77,7 @@ const Header = () => {
                           <li>
                             <NavLink to="/">Home</NavLink>
                           </li>
-                          <li><NavLink to="/about">About </NavLink></li>
+                          <li><NavLink to="/about">About</NavLink></li>
                           <li className="menu-item-has-children">
                             <NavLink to="/service">
                               Services <i className="fas fa-angle-down"></i>
@@ -84,14 +90,12 @@ const Header = () => {
                               <li className='submenu-item'><NavLink to="/service"> Blockchain Development</NavLink></li>
                               <li className='submenu-item'><NavLink to="/service"> Business Consulting</NavLink></li>
                               <li className='submenu-item'><NavLink to="/service">Payment Gateway</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service">Gaming App Development </NavLink></li>
+                              <li className='submenu-item'><NavLink to="/service">Gaming App Development</NavLink></li>
                             </ul>
                           </li>
-
                           <li className="has-dropdown"><NavLink to="/projects">Projects</NavLink></li>
-
                           <li><NavLink to="/contact">Contact</NavLink></li>
-                          <li><NavLink to="#">Blog </NavLink></li>
+                          <li><NavLink to="#">Blog</NavLink></li>
                         </ul>
                       </nav>
                     </div>
@@ -102,7 +106,7 @@ const Header = () => {
                   </a>
 
                   <div className="header-button d-none d-sm-block">
-                    <Link to="contact"><a href="#" className="theme-btn black-btn">Get In Touch</a></Link>
+                    <Link to="contact" className="theme-btn black-btn">Get In Touch</Link>
                   </div>
 
                   <div className="sidebar">
@@ -132,12 +136,34 @@ const Header = () => {
         <div className="mobile-menu mean-container d-xl-none">
           <nav>
             <ul>
-              <li className="has-dropdown">Home</li>
-              <li className="has-dropdown">Pages </li>
-              <li className="has-dropdown">Team</li>
-              <li className="has-dropdown">Team Details</li>
-              <li className="has-dropdown">About</li>
-              <li className="has-dropdown">FAQS</li>
+              <li>
+                <NavLink to="/" onClick={closeOffcanvas}>Home</NavLink>
+              </li>
+              <li><NavLink to="/about" onClick={closeOffcanvas}>About</NavLink></li>
+              
+              {/* Services Dropdown */}
+             <li className={`menu-item-has-children ${openDropdown === 'services' ? 'open' : ''}`}>
+  <div className="menu-link-wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <NavLink to="/service">Services</NavLink>
+    <span onClick={() => toggleDropdown('services')} style={{ padding: '10px', cursor: 'pointer' }}>
+      {openDropdown === 'services' ? <FaMinus /> : <FaPlus />}
+    </span>
+  </div>
+      <ul className="submenu">
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>App Development</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Web Development</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Social Media Marketing</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Software Development</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Blockchain Development</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Business Consulting</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Payment Gateway</NavLink></li>
+                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Gaming App Development</NavLink></li>
+                </ul>
+</li>
+
+              <li className="has-dropdown"><NavLink to="/projects" onClick={closeOffcanvas}>Projects</NavLink></li>
+              <li><NavLink to="/contact" onClick={closeOffcanvas}>Contact</NavLink></li>
+              <li><NavLink to="#" onClick={closeOffcanvas}>Blog</NavLink></li>
             </ul>
           </nav>
         </div>
@@ -145,6 +171,7 @@ const Header = () => {
 
       <div className={`offcanvas__overlay ${isOffcanvasOpen ? 'overlay-open' : ''}`} onClick={closeOffcanvas}></div>
 
+      {/* Sidebar Info Group (Right Side Panel) */}
       <div className={`xs-sidebar-group info-group ${isInfoGroupActive ? 'isActive' : ''}`}>
         <div className="xs-overlay xs-bg-black" onClick={() => setIsInfoGroupActive(false)}></div>
         <div className="xs-sidebar-widget">
@@ -173,17 +200,15 @@ const Header = () => {
                       <FaEnvelope className="icon" />
                       hr@maxedlogic.com
                     </li>
-
                     <li>
                       <FaMapMarkerAlt className="icon" />
                       I Thum Tower C , Sector 62 Noida ,India
                     </li>
-
                   </ul>
                   <ul className="social-box">
                     <li><a href="https://www.facebook.com/profile.php?id=61584969285044"><i className="fa-brands fa-facebook-f"></i></a></li>
                     <li><a href="https://www.instagram.com/maxedlogic__official/?hl=en"><i className="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/maxed-logic-682b3b3b6/       ( Linkindin profile link)"><i className="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/maxed-logic-682b3b3b6/"><i className="fa-brands fa-linkedin-in"></i></a></li>
                     <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
                   </ul>
                 </div>
