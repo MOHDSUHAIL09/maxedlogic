@@ -8,7 +8,8 @@ import Home from './components/Home.jsx';
 import Contact from './Pages/Contact.jsx';
 import Service from "./Pages/Service/Service.jsx";
 import About from './Pages/About/About.jsx';
-import WebDevleopment from './Pages/Components/WebDevleopment.jsx'
+import Products from './Pages/Products.jsx';
+// import WebDevleopment from './Pages/Components/WebDevleopment.jsx'
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -36,7 +37,8 @@ const router = createBrowserRouter([
       { path: 'contact', element: <Contact /> },
       { path: 'service', element: <Service /> },        
       { path: 'about', element: <About /> },   
-      { path: 'webdevelopment', element: <WebDevleopment/> },          
+      {path: "Products", element: <Products/>}
+      // { path: 'webdevelopment', element: <WebDevleopment/> },          
     ],
   },
 ]);

@@ -10,13 +10,22 @@ import Projects from './Projects.jsx'
 import Clients from './Clients'
 import Blog from './Blog.jsx'
 import Delivering from './Delivering.jsx'
+import Seo from './Seo.jsx'
 
 
 
 
-const App = () => {
+const Home = () => {
   return (
     <>
+        <Seo 
+        title="Home"
+        description="Maxedlogic Technologies delivers web, app, blockchain, and software solutions. Trusted by 5000+ clients."
+        path="/"
+      />
+
+
+
         <div class="page-wrapper">
     <Hero/>
     <Features/>
@@ -37,4 +46,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Home

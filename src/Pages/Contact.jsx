@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaArrowRight } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaArrowRight, FaAngleDoubleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Seo from '../components/Seo';   // ✅ SEO component import
 
 // Import images
-import breadcrumbImg from '../assets/img/breadcrumb.jpg';
+import breadcrumbImg from '../assets/img/contact-imgage.jpg';
 import shape21 from '../assets/img/shape/shape-21.png';
 import shape11 from '../assets/img/shape/shape-11.png';
 import shape22 from '../assets/img/shape/shape-22.png';
 import avatarImg from '../assets/img/Avatar.png';
 
 const Contact = () => {
-  // Form state
+  // Form state (same as before)
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -22,7 +24,23 @@ const Contact = () => {
     agreeTerms: false,
   });
 
-  const [budget, setBudget] = useState({ min: 56, max: 1578 });
+  const [budget] = useState({ min: 56, max: 1578 });
+
+  // ✅ Refs for parallax
+  const breadcrumbRef = useRef(null);
+
+  // ✅ Parallax effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (breadcrumbRef.current) {
+        const scrollY = window.scrollY;
+        const parallaxY = scrollY * 0.5;
+        breadcrumbRef.current.style.backgroundPosition = `center ${parallaxY}px`;
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -49,10 +67,24 @@ const Contact = () => {
 
   return (
     <>
-      {/* Breadcrumb Section */}
+      {/* ✅ Page SEO */}
+      <Seo
+        title="Contact Us – IT Company in Noida Sector 62"
+        description="Get in touch with Maxedlogic Technologies in Noida Sector 62, Delhi NCR. Call +91-9310008183 or email hr@maxedlogic.com for web, app, blockchain solutions."
+        path="/contact"
+      />
+
+      {/* Breadcrumb Section with Parallax */}
       <div
         className="breadcrumb-wrapper bg-cover"
-        style={{ backgroundImage: `url(${breadcrumbImg})` }}
+        style={{
+          backgroundImage: `url(${breadcrumbImg})`,
+          backgroundAttachment: 'scroll',
+          backgroundPosition: 'center 0px',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+        }}
+        ref={breadcrumbRef}
       >
         <div className="container">
           <div className="page-heading">
@@ -62,11 +94,9 @@ const Contact = () => {
               </h1>
               <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
-                <li>
-                  <FaArrowRight />
-                </li>
+                  <li><FaAngleDoubleRight/></li>
                 <li>Contact Us</li>
               </ul>
             </div>
@@ -74,7 +104,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Contact Info Section */}
+      {/* Contact Info Section (same) */}
       <section className="contact-page-wrap section-padding">
         <div className="container">
           <div className="row g-4">
@@ -117,12 +147,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact Form Section (unchanged) */}
       <section className="contact-us-wrapper contact-us-2 section-padding">
         <div className="shape">
-          <img className="shape-1" src={shape21} alt="" />
-          <img className="shape-2" src={shape11} alt="" />
-          <img className="shape-3" src={shape22} alt="" />
+          <img className="shape-1" src={shape21} alt="Decorative shape" />
+          <img className="shape-2" src={shape11} alt="Decorative shape" />
+          <img className="shape-3" src={shape22} alt="Decorative shape" />
         </div>
         <div className="container">
           <div className="section-title text-center">
@@ -264,7 +294,7 @@ const Contact = () => {
                         Send Message
                       </button>
                       <div className="infu pt-xxl-0 pt-3">
-                        <img src={avatarImg} alt="Avatar" />
+                        <img src={avatarImg} alt="Customer support avatar" />
                         <p>Meet With Expert</p>
                       </div>
                     </div>
@@ -276,14 +306,14 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section with custom location icon overlay */}
+      {/* Map Section (unchanged) */}
       <section className="map-section section-padding pt-0">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="google-map position-relative">
                 <iframe
-                  title="Office Location"
+                  title="Office Location - I-Thum Tower C, Sector 62, Noida"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.0199999999996!2d77.3533903!3d28.573811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5d3c8b6a5a1%3A0x8e5a6c2e5c8f5b2d!2sI-Thum%20Tower%20C%2C%20Sector%2062%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                   width="100%"
                   height="450"
@@ -292,7 +322,6 @@ const Contact = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-                {/* Custom location icon overlay */}
                 <div
                   style={{
                     position: 'absolute',

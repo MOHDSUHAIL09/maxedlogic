@@ -19,7 +19,7 @@ import logowhite from '../assets/img/logo/whitelogo.png';
 
 const Header = () => {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
-  const [openSubmenus, setOpenSubmenus] = useState({});
+  const [setOpenSubmenus] = useState({});
   const [isSticky, setIsSticky] = useState(false);
   const [isInfoGroupActive, setIsInfoGroupActive] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // ✅ Added for mobile dropdown
@@ -64,8 +64,8 @@ const Header = () => {
               <div className="header-main">
                 <div className="header-left">
                   <div className="logo">
-                    <a href="index-2.html" className="header-logo">
-                      <img src={logo} alt="logo-img" className="header-logo" />
+                    <a href="/" className="header-logo">
+                      <img src={logo} alt="maxedlogic-logo-img" className="header-logo" />
                     </a>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const Header = () => {
                               <li className='submenu-item'><NavLink to="/service">Gaming App Development</NavLink></li>
                             </ul>
                           </li>
-                          <li className="has-dropdown"><NavLink to="/projects">Projects</NavLink></li>
+                          <li className="has-dropdown"><NavLink to="/products">Products</NavLink></li>
                           <li><NavLink to="/contact">Contact</NavLink></li>
                           <li><NavLink to="#">Blog</NavLink></li>
                         </ul>
@@ -101,7 +101,7 @@ const Header = () => {
                     </div>
                   </div>
 
-                  <a href="#0" className="search-trigger search-icon mb-1">
+                  <a href="#" className="search-trigger search-icon mb-1">
                     <FaSearch style={{ fontSize: "18px" }} />
                   </a>
 
@@ -131,7 +131,7 @@ const Header = () => {
       <div className={`offcanvas__info ${isOffcanvasOpen ? 'info-open' : ''}`}>
         <div className="offcanvas__close" onClick={closeOffcanvas}><FaTimes /></div>
         <div className="offcanvas__logo mb-30">
-          <a href="index-2.html"><img src={logowhite} alt="logo" /></a>
+          <a href="/"><img src={logowhite} alt="maxedlogic-white-logo" /></a>
         </div>
         <div className="mobile-menu mean-container d-xl-none">
           <nav>
@@ -176,7 +176,7 @@ const Header = () => {
         <div className="xs-overlay xs-bg-black" onClick={() => setIsInfoGroupActive(false)}></div>
         <div className="xs-sidebar-widget">
           <div className="sidebar-widget-container">
-            <img src={logowhite} alt='logo' className='header-logo' />
+            <img src={logowhite} alt='maxedlogic-white-logo' className='header-logo' />
             <div className="widget-heading">
               <a href="#" className="close-side-widget" onClick={(e) => { e.preventDefault(); setIsInfoGroupActive(false); }}>
                 <i className="fa-solid fa-xmark"></i>

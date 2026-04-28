@@ -14,6 +14,7 @@ import case01 from '../assets/img/case/01.jpg';
 import case02 from '../assets/img/case/02.jpg';
 import case03 from '../assets/img/case/03.jpg';
 import case04 from '../assets/img/case/04.jpg';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const swiperRef = useRef(null);
@@ -100,7 +101,7 @@ const Projects = () => {
                     <h4>MLM Softwares</h4>
                   </div>
                   <span className="icon">
-                    <FaLongArrowAltRight />
+                   <Link to="products"><FaLongArrowAltRight /></Link>
                   </span>
                 </div>
               </div>
@@ -117,7 +118,7 @@ const Projects = () => {
                     <h4>Banking Software</h4>
                   </div>
                   <span className="icon">
-                    <FaLongArrowAltRight />
+                    <Link to="products"><FaLongArrowAltRight /></Link>
                   </span>
                 </div>
               </div>
@@ -134,7 +135,7 @@ const Projects = () => {
                     <h4>ERP Software</h4>
                   </div>
                   <span className="icon">
-                    <FaLongArrowAltRight />
+                    <Link to="products"><FaLongArrowAltRight /></Link>
                   </span>
                 </div>
               </div>
@@ -152,7 +153,7 @@ const Projects = () => {
                     <h4>E-Commerce </h4>
                   </div>
                   <span className="icon">
-                    <FaLongArrowAltRight />
+                    <Link to="products"><FaLongArrowAltRight /></Link>
                   </span>
                 </div>
               </div>

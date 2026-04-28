@@ -11,6 +11,7 @@ import './assets/css/meanmenu.css';
 import './assets/css/nice-select.css';
 import ScrollEffects from './components/ScrollEffects';
 import Preloader from './Preloader';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
 
@@ -30,12 +31,15 @@ const App = () => {
 
 
   return (
+    
     <div className="page-wrapper">
+      <HelmetProvider>
       <Header />
       <ScrollEffects>
         <Outlet />
       </ScrollEffects>
       <Footer />
+      </HelmetProvider>
     </div>
   );
 };

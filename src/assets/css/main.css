@@ -2020,9 +2020,9 @@ input.main-search-input::placeholder {
   transition: all 0.4s ease-in-out;
   gap: 0px !important;
 }
-.submenu .submenu-item{
+/* .submenu .submenu-item{
   margin-left: 30px;  
-}
+} */
 .submenu .submenu-item:hover{
   margin-left: 35px;
   transition: margin-left 0.3s ease;
@@ -2605,7 +2605,7 @@ input.main-search-input::placeholder {
 }
 
 .breadcrumb-wrapper::before {
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -2614,7 +2614,18 @@ input.main-search-input::placeholder {
   height: 100%;
   content: "";
   background: linear-gradient(89deg, rgba(0, 85, 255, 0.75) 15.79%, rgba(163, 71, 255, 0.75) 91.12%);
-  z-index: -1;
+  z-index: -1; */
+
+
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: .77;
 }
 
 .breadcrumb-wrapper .page-heading {
@@ -2627,7 +2638,7 @@ input.main-search-input::placeholder {
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: center;
   z-index: 99;
 }
 
@@ -2681,12 +2692,10 @@ input.main-search-input::placeholder {
 }
 
 .breadcrumb-wrapper .page-heading .breadcrumb-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -4230,11 +4239,13 @@ input.main-search-input::placeholder {
 }
 
 .about-1.style-2 .about-images-2 .image-1 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-fit: cover;
+    border-top-left-radius: 130px;
+    transition: all 0.4s ease-in-out;
 }
 
 .about-1.style-2 .about-images-2 .image-2 {
@@ -5306,7 +5317,7 @@ input.main-search-input::placeholder {
   width: 100%;
   height: 100%;
   content: "";
-  background: rgba(0, 3, 37, 0.56);
+  background: linear-gradient(84deg, var(--theme) 0%, var(--theme-2) 100%);
 }
 
 .service-4 .signle-service-item:hover .icon i {
@@ -11930,6 +11941,12 @@ footer .gallery .footer-gallery-img:hover .content {
 .custom-list li i {
   color: #f67676;
 }
+
+
+
+
+
+
 
 
 
