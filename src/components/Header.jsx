@@ -22,7 +22,7 @@ const Header = () => {
   const [setOpenSubmenus] = useState({});
   const [isSticky, setIsSticky] = useState(false);
   const [isInfoGroupActive, setIsInfoGroupActive] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null); // ✅ Added for mobile dropdown
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleOffcanvas = () => setIsOffcanvasOpen(!isOffcanvasOpen);
   const closeOffcanvas = () => setIsOffcanvasOpen(false);
@@ -83,19 +83,19 @@ const Header = () => {
                               Services <i className="fas fa-angle-down"></i>
                             </NavLink>
                             <ul className="submenu">
-                              <li className='submenu-item'><NavLink to="/service">App Development</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service"> Web Development</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service"> Social Media Marketing</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service">Software Development</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service"> Blockchain Development</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service"> Business Consulting</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service">Payment Gateway</NavLink></li>
-                              <li className='submenu-item'><NavLink to="/service">Gaming App Development</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service">App Development</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service"> Web Development</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service"> Social Media Marketing</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service">Software Development</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service"> Blockchain Development</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service"> Business Consulting</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service">Payment Gateway</NavLink></li>
+                              <li className='submenu-item01'><NavLink to="/service">Gaming App Development</NavLink></li>
                             </ul>
                           </li>
                           <li className="has-dropdown"><NavLink to="/products">Products</NavLink></li>
                           <li><NavLink to="/contact">Contact</NavLink></li>
-                          <li><NavLink to="#">Blog</NavLink></li>
+                          <li><NavLink to="blogs">Blog</NavLink></li>
                         </ul>
                       </nav>
                     </div>
@@ -140,16 +140,16 @@ const Header = () => {
                 <NavLink to="/" onClick={closeOffcanvas}>Home</NavLink>
               </li>
               <li><NavLink to="/about" onClick={closeOffcanvas}>About</NavLink></li>
-              
+
               {/* Services Dropdown */}
-             <li className={`menu-item-has-children ${openDropdown === 'services' ? 'open' : ''}`}>
-  <div className="menu-link-wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-    <NavLink to="/service">Services</NavLink>
-    <span onClick={() => toggleDropdown('services')} style={{ padding: '10px', cursor: 'pointer' }}>
-      {openDropdown === 'services' ? <FaMinus /> : <FaPlus />}
-    </span>
-  </div>
-      <ul className="submenu">
+              <li className={`menu-item-has-children ${openDropdown === 'services' ? 'open' : ''}`}>
+                <div className="menu-link-wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <NavLink to="/service">Services</NavLink>
+                  <span onClick={() => toggleDropdown('services')} style={{ padding: '10px', cursor: 'pointer' }}>
+                    {openDropdown === 'services' ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </div>
+                <ul className="submenu">
                   <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>App Development</NavLink></li>
                   <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Web Development</NavLink></li>
                   <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Social Media Marketing</NavLink></li>
@@ -159,11 +159,11 @@ const Header = () => {
                   <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Payment Gateway</NavLink></li>
                   <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Gaming App Development</NavLink></li>
                 </ul>
-</li>
+              </li>
 
               <li className="has-dropdown"><NavLink to="/projects" onClick={closeOffcanvas}>Projects</NavLink></li>
               <li><NavLink to="/contact" onClick={closeOffcanvas}>Contact</NavLink></li>
-              <li><NavLink to="#" onClick={closeOffcanvas}>Blog</NavLink></li>
+              <li><NavLink to="blogs" onClick={closeOffcanvas}>Blog</NavLink></li>
             </ul>
           </nav>
         </div>

@@ -14,6 +14,8 @@ import case01 from '../assets/img/case/01.jpg';
 import case02 from '../assets/img/case/02.jpg';
 import case03 from '../assets/img/case/03.jpg';
 import case04 from '../assets/img/case/04.jpg';
+import case05 from '../assets/img/case/05.jpg';
+import case06 from '../assets/img/case/06.png';
 import { Link } from 'react-router-dom';
 
 const Projects = () => {
@@ -56,7 +58,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="case-study-wrapper case-study-1 section-bg section-padding">
+    <section className="case-study-1">
       
       {/* Shape */}
       <div className="shape">
@@ -101,7 +103,7 @@ const Projects = () => {
                     <h4>MLM Softwares</h4>
                   </div>
                   <span className="icon">
-                   <Link to="products"><FaLongArrowAltRight /></Link>
+                   <FaLongArrowAltRight />
                   </span>
                 </div>
               </div>
@@ -118,7 +120,7 @@ const Projects = () => {
                     <h4>Banking Software</h4>
                   </div>
                   <span className="icon">
-                    <Link to="products"><FaLongArrowAltRight /></Link>
+                    <FaLongArrowAltRight />
                   </span>
                 </div>
               </div>
@@ -135,14 +137,14 @@ const Projects = () => {
                     <h4>ERP Software</h4>
                   </div>
                   <span className="icon">
-                    <Link to="products"><FaLongArrowAltRight /></Link>
+                    <FaLongArrowAltRight />
                   </span>
                 </div>
               </div>
             </div>
 
 
-                          {/* Slide 6 */}
+                          {/* Slide 4 */}
               <div className="swiper-slide">
               <div className="single-case-item">
                 <div className="image">
@@ -150,15 +152,52 @@ const Projects = () => {
                 </div>
                 <div className="content d-flex justify-content-between">
                   <div className="title">
-                    <h4>E-Commerce </h4>
+                    <h4>Blockchain Software </h4>
                   </div>
                   <span className="icon">
-                    <Link to="products"><FaLongArrowAltRight /></Link>
+                    <FaLongArrowAltRight />
                   </span>
                 </div>
               </div>
             </div>
 
+                                      {/* Slide 5 */}
+              <div className="swiper-slide">
+              <div className="single-case-item">
+                <div className="image">
+                  <img src={case05} alt="project" />
+                </div>
+                <div className="content d-flex justify-content-between">
+                  <div className="title">
+                    <h4>Messaging App</h4>
+                  </div>
+                  <span className="icon">
+                    <FaLongArrowAltRight />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+ {/* Slide 6 */}
+                          <div className="swiper-slide">
+              <div className="single-case-item">
+                <div className="image">
+                  <img src={case06} alt="project" />
+                </div>
+                <div className="content d-flex justify-content-between">
+                  <div className="title">
+                    <h4>E-Commerce </h4>
+                  </div>
+                  <span className="icon">
+                    <FaLongArrowAltRight />
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            
+
+            
           </div>  
 
           {/* Pagination dots */}
