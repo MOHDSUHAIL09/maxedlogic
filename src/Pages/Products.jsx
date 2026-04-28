@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';   // ✅ SEO component import
 
 // Import images
-import breadcrumbImg from '../assets/img/contact-imgage.jpg';
+import breadcrumbImg from '../assets/img/product-image.jpg';
 
 const Products = () => {
   // ✅ Refs for parallax
