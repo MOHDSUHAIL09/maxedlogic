@@ -115,16 +115,17 @@ const Header = () => {
                             </ul>
                           </li>
                           <li className="has-dropdown"><NavLink to="/products">Products</NavLink></li>
+                           <li><NavLink to="blogs">Blog</NavLink></li>
                           <li><NavLink to="/contact">Contact</NavLink></li>
-                          <li><NavLink to="blogs">Blog</NavLink></li>
+                         
                         </ul>
                       </nav>
                     </div>
                   </div>
 
-                  <a href="#" className="search-trigger search-icon mb-1">
+                  {/* <a href="#" className="search-trigger search-icon mb-1">
                     <FaSearch style={{ fontSize: "18px" }} />
-                  </a>
+                  </a> */}
 
                   <div className="header-button d-none d-sm-block">
                     <Link to="contact" className="theme-btn black-btn">Get In Touch</Link>

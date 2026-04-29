@@ -4,7 +4,7 @@ import { FaCircle, FaLongArrowAltRight } from 'react-icons/fa';
 // Import images (adjust paths as needed)
 import shape5Black from '../assets/img/shape/shape-5-black.png';
 import shape1 from '../assets/img/shape/shape-1.png';
-import blog01 from '../assets/img/blog/01.jpg';
+import blog01 from '../assets/img/blog/01.png';
 import blog02 from '../assets/img/blog/02.jpg';
 import blog03 from '../assets/img/blog/03.jpg';
 import { Link } from 'react-router-dom';
