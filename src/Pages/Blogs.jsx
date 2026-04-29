@@ -5,8 +5,6 @@ import Seo from '../components/Seo';
 
 // Breadcrumb background
 import breadcrumbImg from '../assets/img/blog/Blogs-img.jpg';
-
-// Blog post images (adjust extensions as needed – .jpg, .png, etc.)
 import blog01 from '../assets/img/blog/blog-01.jpg';
 import blog02 from '../assets/img/blog/blog-02.jpg';
 import blog03 from '../assets/img/blog/blog-03.jpg';
