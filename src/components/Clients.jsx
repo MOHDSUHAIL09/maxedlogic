@@ -84,6 +84,7 @@ const Clients = () => {
                 <ul className="client-rating d-flex align-items-center justify-content-center">
                   <li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li>
                 </ul>
+
                 <h5>"Pioneers in AI Integration Services"</h5>
                 <p className="text">"Their advanced AI solutions helped us streamline operations and improve user experiences effortlessly."</p>
                 <div className="client-info">

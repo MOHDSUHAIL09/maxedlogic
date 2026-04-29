@@ -288,17 +288,20 @@ h4 {
 
 .h5,
 h5 {
-    font-size: 1.25rem
+    font-size: 1.25rem;
+    color: #fff;
+    
 }
 
 .h6,
 h6 {
-    font-size: 1rem
+    font-size: 1rem;
+    color: #fff;
 }
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 abbr[title] {
@@ -9088,7 +9091,9 @@ fieldset:disabled .btn {
 }
 
 .p-5 {
-    padding: 3rem !important
+    padding: 3rem !important;
+    background-color: #052c65;  
+    border-radius: 18px;
 }
 
 .px-0 {

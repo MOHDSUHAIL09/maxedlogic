@@ -7347,8 +7347,8 @@ input.main-search-input::placeholder {
 
 .testimonial-4 .single-testimonial-item {
   text-align: center;
-  padding: 0 50px;
-  border-right: 1px solid var(--border-2);
+  padding: 0 35px;
+  border-right: 1px solid #8d8888;
   position: relative;
 }
 
@@ -7395,6 +7395,7 @@ input.main-search-input::placeholder {
 .testimonial-4 .single-testimonial-item .text {
   font-size: 15px;
   padding-top: 10px;
+  color: #fff;
 }
 
 .testimonial-4 .single-testimonial-item .client-info p {
@@ -11598,6 +11599,7 @@ footer .gallery .footer-gallery-img:hover .content {
 .swiper-nav-buttons {
   display: flex;
   gap: 12px;
+  margin-top: 100px !important;
 }
 
 /* Pagination dots */
@@ -11614,6 +11616,12 @@ footer .gallery .footer-gallery-img:hover .content {
 
 /* Responsive */
 @media (max-width: 768px) {
+.testimonial-4 .single-testimonial-item {
+    text-align: center;
+    border: none  ;
+    position: relative;
+}
+
   .testimonial-header {
     flex-direction: column;
     align-items: flex-start;

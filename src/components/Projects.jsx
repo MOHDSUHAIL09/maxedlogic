@@ -211,6 +211,7 @@ const Projects = () => {
           .swiper-button-wrapper {
             z-index: 10;
             margin-top: 80px;
+            
           }
           .btn-nav {
             background: #fff;
@@ -232,11 +233,19 @@ const Projects = () => {
             border-color: #007bff;
           }
           @media (max-width: 768px) {
+          .swiper-button-wrapper {
+            margin-top: 100px;
+          }         
             .btn-nav {
               width: 36px;
               height: 36px;
               font-size: 14px;
             }
+          }
+              @media (max-width: 428px) {
+          .swiper-button-wrapper {
+            margin-top: 130px;
+          }         
           }
         `}
       </style>

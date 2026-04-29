@@ -59,7 +59,7 @@ const Choosesection2 = () => {
           <div className="col-xl-6 col-lg-12 col-md-12 wow fadeInRight" data-wow-delay="300ms">
             <div className="choose-us-images">
               <img className="shape-1" src={worldImg} alt="" />
-              <div className="row">
+              <div className="row g-2">
                 {cardsData.map((card, idx) => (
                   <div className="col-xl-6 col-lg-6 col-md-6 mt-xl-4" key={idx}>
                     <div className="flip-card">
