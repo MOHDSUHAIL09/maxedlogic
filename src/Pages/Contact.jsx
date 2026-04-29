@@ -322,6 +322,7 @@ const Contact = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+              
                 <div
                   style={{
                     position: 'absolute',
@@ -339,8 +340,7 @@ const Contact = () => {
                     fontWeight: '500',
                   }}
                 >
-                  <FaMapMarkerAlt style={{ color: '#007bff', fontSize: '18px' }} />
-                  <span>📍 I-Thum Tower C, Sector 62, Noida</span>
+                  
                 </div>
               </div>
             </div>
