@@ -60,7 +60,7 @@ const About = () => {
         <div className="container">
           <div className="page-heading">
             <div className="breadcrumb-sub-title">
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">About Company</h1>
+              <h1 className="wow fadeInUp" data-wow-delay=".3s">About </h1>
               <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                 <li>
                   <Link to="/">Home</Link>
@@ -68,7 +68,7 @@ const About = () => {
                 <li>
                   <FaAngleDoubleRight/>
                 </li>
-                <li>About Company</li>
+                <li>About</li>
               </ul>
             </div>
           </div>

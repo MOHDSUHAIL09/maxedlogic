@@ -31,7 +31,7 @@ const Header = () => {
     setOpenSubmenus(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // ✅ Mobile dropdown toggle
+  // Mobile dropdown toggle
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
@@ -54,6 +54,11 @@ const Header = () => {
     document.addEventListener('keydown', handleEsc);
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
+
+  // Helper to generate hash for each service
+  const getServiceHash = (title) => {
+    return title.toLowerCase().replace(/ /g, '-');
+  };
 
   return (
     <>
@@ -79,18 +84,34 @@ const Header = () => {
                           </li>
                           <li><NavLink to="/about">About</NavLink></li>
                           <li className="menu-item-has-children">
-                            <NavLink to="/service">
+                            <NavLink to="/service" >
                               Services <i className="fas fa-angle-down"></i>
                             </NavLink>
                             <ul className="submenu">
-                              <li className='submenu-item01'><NavLink to="/service">App Development</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service"> Web Development</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service"> Social Media Marketing</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service">Software Development</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service"> Blockchain Development</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service"> Business Consulting</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service">Payment Gateway</NavLink></li>
-                              <li className='submenu-item01'><NavLink to="/service">Gaming App Development</NavLink></li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('App Development')}`}>App Development</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Web Development')}`}>Web Development</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Social Media Marketing')}`}>Social Media Marketing</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Software Development')}`}>Software Development</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Blockchain Development')}`}>Blockchain Development</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Business Consulting')}`}>Business Consulting</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Payment Gateway')}`}>Payment Gateway</NavLink>
+                              </li>
+                              <li className='submenu-item01'>
+                                <NavLink to={`/service#${getServiceHash('Gaming App Development')}`}>Gaming App Development</NavLink>
+                              </li>
                             </ul>
                           </li>
                           <li className="has-dropdown"><NavLink to="/products">Products</NavLink></li>
@@ -150,14 +171,30 @@ const Header = () => {
                   </span>
                 </div>
                 <ul className="submenu">
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>App Development</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Web Development</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Social Media Marketing</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Software Development</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Blockchain Development</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Business Consulting</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Payment Gateway</NavLink></li>
-                  <li className='submenu-item'><NavLink to="/service" onClick={closeOffcanvas}>Gaming App Development</NavLink></li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('App Development')}`} onClick={closeOffcanvas}>App Development</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Web Development')}`} onClick={closeOffcanvas}>Web Development</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Social Media Marketing')}`} onClick={closeOffcanvas}>Social Media Marketing</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Software Development')}`} onClick={closeOffcanvas}>Software Development</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Blockchain Development')}`} onClick={closeOffcanvas}>Blockchain Development</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Business Consulting')}`} onClick={closeOffcanvas}>Business Consulting</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Payment Gateway')}`} onClick={closeOffcanvas}>Payment Gateway</NavLink>
+                  </li>
+                  <li className='submenu-item'>
+                    <NavLink to={`/service#${getServiceHash('Gaming App Development')}`} onClick={closeOffcanvas}>Gaming App Development</NavLink>
+                  </li>
                 </ul>
               </li>
 

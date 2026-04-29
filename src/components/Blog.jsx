@@ -7,6 +7,7 @@ import shape1 from '../assets/img/shape/shape-1.png';
 import blog01 from '../assets/img/blog/01.jpg';
 import blog02 from '../assets/img/blog/02.jpg';
 import blog03 from '../assets/img/blog/03.jpg';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   return (
@@ -47,9 +48,10 @@ const Blog = () => {
                   <p>
                     Node.js, the popular runtime environment for executing JavaScript code server-side, continues to evolve with each new version,
                   </p>
-                  <a href="blogs-details.html" className="link-btn">
-                    Read More <FaLongArrowAltRight />
-                  </a>
+                    <Link to= "blogs">
+                  <a className="link-btn">
+                    Read More 
+                  </a></Link>
                 </div>
               </div>
             </div>
@@ -73,9 +75,10 @@ const Blog = () => {
                   <p>
                     In the fast-paced world of mobile app development, developers are constantly seeking tools and frameworks that enable
                   </p>
-                  <a href="blogs-details.html" className="link-btn">
-                    Read More <FaLongArrowAltRight />
-                  </a>
+                  <Link to= "blogs">
+                  <a className="link-btn">
+                    Read More 
+                  </a></Link>
                 </div>
               </div>
             </div>
@@ -99,9 +102,10 @@ const Blog = () => {
                   <p>
                     seamless integration with scalable backend services built on ASP.NET Core, enabling real‑time sync, security, and cloud readiness.
                   </p>
-                  <a href="blogs-details.html" className="link-btn">
-                    Read More <FaLongArrowAltRight />
-                  </a>
+                   <Link to= "blogs">
+                  <a className="link-btn">
+                    Read More 
+                  </a></Link>
                 </div>
               </div>
             </div>
@@ -111,5 +115,4 @@ const Blog = () => {
     </section>
   );
 };
-
 export default Blog;

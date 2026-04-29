@@ -5207,13 +5207,13 @@ input.main-search-input::placeholder {
 .service-4 .signle-service-item {
   width: 100%;
   height: 310px;
-  padding: 75px 40px 30px 40px;
+  /* padding: 75px 40px 30px 40px; */
   position: relative;
   margin-top: 60px;
   border-radius: 12px;
   text-align: center;
   background-color: var(--white);
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .service-4 .signle-service-item h4 a {
@@ -11956,3 +11956,8 @@ footer .gallery .footer-gallery-img:hover .content {
 .custom-list li i {
   color: #f67676;
 }
+.footer-wrapper{
+  background-color: #f5f3f3;
+  margin-top: 10px;
+}
+

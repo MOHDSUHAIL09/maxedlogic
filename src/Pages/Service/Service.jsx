@@ -4,6 +4,7 @@ import {
   FaCode, FaWrench, FaBrain, FaCogs, FaNetworkWired,
   FaLongArrowAltRight, FaComments, FaThumbsUp, FaAngleDoubleRight
 } from 'react-icons/fa';
+import { TfiShoppingCartFull } from "react-icons/tfi";
 import { MdAppShortcut } from "react-icons/md";
 import { GrCloudSoftware } from "react-icons/gr";
 import { SiBlockchaindotcom } from "react-icons/si";
@@ -14,30 +15,146 @@ import { IoGameController } from "react-icons/io5";
 import breadcrumbImg from '../../assets/img/breadcrumb.jpg';
 import processShape6 from '../../assets/img/process/shape-6.png';
 import processShape7 from '../../assets/img/process/shape-7.png';
+import Seo from '../../components/Seo';
 
 const Service = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const breadcrumbRef = useRef(null);
 
-  // Scroll to top on route change
+  // Scroll to top on route change (only if no hash)
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   // Parallax effect for breadcrumb background
   useEffect(() => {
     const handleScroll = () => {
       if (breadcrumbRef.current) {
         const scrollY = window.scrollY;
-        // Move background at half speed for smooth parallax
         const parallaxY = scrollY * 0.5;
         breadcrumbRef.current.style.backgroundPosition = `center ${parallaxY}px`;
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Scroll to element based on URL hash (e.g., #app-development)
+  useEffect(() => {
+    if (hash) {
+      const id = hash.substring(1); // remove '#'
+      const element = document.getElementById(id);
+      if (element) {
+        // Slight delay to ensure all layout is stable
+        setTimeout(() => {
+          const headerOffset = 100; // Adjust based on your sticky header height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 300);
+      }
+    }
+  }, [hash]);
+
+  // Services data with front and back content
+  const servicesData = [
+    {
+      id: 1,
+      icon: <FaCode />,
+      frontTitle: "Web Development",
+      frontDesc: "As a leading website designer and developer in India, we turn your vision into a stunning and authoritative website that seamlessly connects your brand with your customers.",
+      frontLink: "/",
+      backTitle: "Web Development",
+      backDesc: "Maxed Logic is a leading web development company in Noida, India, dedicated to transforming your ideas into powerful digital solutions. We provide the best web development services in Noida, helping businesses build...",
+      backLink: "/",
+      delay: "200ms"
+    },
+    {
+      id: 2,
+      icon: <MdAppShortcut />,
+      frontTitle: "App Development",
+      frontDesc: "Create an Android app that stands one in a million with our expert app development services. Whether you have an idea for a database-driven Android application...",
+      frontLink: "/services/cyber-security",
+      backTitle: "App Development",
+      backDesc: "We develop custom mobile applications according to your business needs. Get your Mobile App for iOS and Android platforms. With our team of expert app designers, you will get only the best...",
+      backLink: "/services/cyber-security",
+      delay: "400ms"
+    },
+    {
+      id: 3,
+      icon: <GrCloudSoftware />,
+      frontTitle: "Software Development",
+      frontDesc: "We are a leading software development company delivering top-rated and customized software solutions tailored to your business needs. With our vast experience and technical.",
+      frontLink: "/services/ui-ux-design",
+      backTitle: "Software Development",
+      backDesc: " maxedlogic is a software development company in Noida India. We provide innovative, reliable and scalable software solution for any OS in Noida India. We have been providing software solutions in multiple domains across different software platforms.",
+      backLink: "/services/ui-ux-design",
+      delay: "600ms"
+    },
+    {
+      id: 4,
+      icon: <SiBlockchaindotcom />,
+      frontTitle: "Blockchain Development",
+      frontDesc: "We transform your ideas into powerful blockchain solutions, helping you discover innovative networking models that enhance transparency, security, and efficiency for your business.",
+      frontLink: "/services/business-planning",
+      backTitle: "Blockchain Development",
+      backDesc: "maxedlogic Technologies is a leading Blockchain Development company in Noida, India, delivering innovative and customized blockchain solutions tailored to diverse business needs. We specialize in building secure, scalable, and decentralized applications",
+      backLink: "/services/business-planning",
+      delay: "800ms"
+    },
+    {
+      id: 5,
+      icon: <RiSecurePaymentFill />,
+      frontTitle: "Payment Gateway",
+      frontDesc: "We provide secure and reliable Payment Gateway integration services that enable smooth, fast, and hassle-free online transactions for your business. Our solutions to support multiple payment methods.",
+      frontLink: "/services/management",
+      backTitle: "Payment Gateway",
+      backDesc: "Maxed Logic delivers advanced, secure payment gateway integrations that power seamless, lightning-fast transactions while supporting a wide spectrum of modern payment methods—ensuring reliability your business can trust.",
+      backLink: "/services/management",
+      delay: "200ms"
+    },
+    {
+      id: 6,
+      icon: <FaBrain />,
+      frontTitle: "ERP Development",
+      frontDesc: "We build smart ERP systems that automate workflows, simplify complex processes, and give you real-time control over every aspect of your business with precision and scalability.",
+      frontLink: "/services/data-science",
+      backTitle: "ERP Development",
+      backDesc: "Maxed Logic offers custom ERP development services that automate workflows, streamline business operations, and deliver real-time data control with scalable and secure ERP solutions for growing businesses.",
+      backLink: "/services/data-science",
+      delay: "400ms"
+    },
+    {
+      id: 7,
+      icon: <FaDatabase />,
+      frontTitle: "Data Analytics",
+      frontDesc: "Our data analytics services and research skills help segment audiences by different demographic groups and analyze attitudes and trends in each of them with precision.",
+      frontLink: "/services/pro-technology",
+      backTitle: "Data Analytics",
+      backDesc: "Maxed Logic leverages advanced data analytics and research-driven strategies to segment audiences by demographics, uncover behavioral trends, and produce accurate, actionable insights that drive smarter decisions and business growth.",
+      backLink: "/services/pro-technology",
+      delay: "600ms"
+    },
+    {
+      id: 8,
+      icon: <IoGameController />,
+      frontTitle: "Gaming App Development",
+      frontDesc: "Owing to its wide adaptability in the multiple game development languages that it supports, Android games have been extremely popular across global markets worldwide.",
+      frontLink: "/services/it-consultant",
+      backTitle: "Gaming App Development",
+      backDesc: "Maxed Logic is a leading gaming app development company in Noida, India, offering end-to-end game development services at competitive rates. Our experienced team has worked on top-tier games for major industry players, delivering high-quality.",
+      backLink: "/services/it-consultant",
+      delay: "800ms"
+    }
+  ];
+
+  // Generate ID from title for each service
+  const getServiceId = (title) => title.toLowerCase().replace(/ /g, '-');
 
   return (
     <>
@@ -51,8 +168,60 @@ const Service = () => {
           .infu-btn:hover .arrow-icon {
             color: #ffffff !important;
           }
+
+          /* FLIP CARD STYLES - keeps original design, adds 3D flip */
+          .signle-service-item {
+            background: transparent !important;
+            perspective: 1000px;
+            height: 100%;
+            min-height: 380px;
+            cursor: pointer;
+          }
+
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+          }
+
+          .signle-service-item:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+
+          .flip-front, .flip-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: inherit;
+            background: #fff;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            padding: 30px 20px;
+            box-sizing: border-box;
+            padding-top: 70px;
+          }
+
+          .flip-front {
+            transform: rotateY(0deg);
+          }
+
+          .flip-back {
+            transform: rotateY(180deg);
+          }
         `}
       </style>
+
+      <Seo
+        title="IT Services in Noida | Web Development, App, Blockchain & More"
+        description="Maxedlogic Technologies offers top IT services in Noida: Web Development, Mobile App Development, Software Development, Blockchain, Payment Gateway Integration, ERP, Data Analytics, and Gaming App Development. Get a free consultation today!"
+        path="/services"
+        type="website"
+      />
 
       {/* Breadcrumb with Parallax Background */}
       <div
@@ -88,111 +257,43 @@ const Service = () => {
           </div>
           <div className="service-inner text-center overflow-hidden mt-4 pt-3">
             <div className="row gy-xxl-5">
-
-
-               
-              {/* Card 1 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="200ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><FaCode /></i></div>
-                  <div className="line mb-4" />
-                  <h4>Web Development</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
+              {servicesData.map((service) => (
+                <div 
+                  className="col-xxl-3 col-xl-4 col-lg-6 col-md-6" 
+                  key={service.id}
+                  id={getServiceId(service.frontTitle)}
+                >
+                  <div className="signle-service-item wow fadeInUp" data-wow-delay={service.delay}>
+                    <div className="flip-card-inner">
+                      {/* FRONT SIDE - original design */}
+                      <div className="flip-front">
+                        <div className="service-bg bg-cover" />
+                        <div className="icon">{service.icon}</div>
+                        <div className="line mb-4" />
+                        <h4>{service.frontTitle}</h4>
+                        <p className="pt-3">{service.frontDesc}</p>
+                        <Link to={service.frontLink} className="infu-btn">
+                          Read More <FaLongArrowAltRight className="arrow-icon" />
+                        </Link>
+                      </div>
+                      {/* BACK SIDE - same design, different text */}
+                      <div className="flip-back">
+                        <div className="service-bg bg-cover" />
+                        <div className="icon"><i className='flaticon-user-experience'>{service.icon}</i></div>
+                        <div className="line mb-3" />
+                        <h4>{service.backTitle}</h4>
+                        <p className="pt-1">{service.backDesc}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="400ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><MdAppShortcut/></i></div>
-                  <div className="line mb-4" />
-                  <h4>App Development</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/cyber-security" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="600ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><GrCloudSoftware/></i></div>
-                  <div className="line mb-4" />
-                  <h4>Software Development</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/ui-ux-design" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
-              {/* Card 4 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="800ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><SiBlockchaindotcom/></i></div>
-                  <div className="line mb-4" />
-                  <h4>Blockchain Development</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/business-planning" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
-              {/* Card 5 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="200ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><RiSecurePaymentFill/></i></div>
-                  <div className="line mb-4" />
-                  <h4>Payment Gateway</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/management" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
-              {/* Card 6 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="400ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><FaBrain /></i></div>
-                  <div className="line mb-4" />
-                  <h4>ERP Development</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/data-science" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
-              {/* Card 7 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="600ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><FaDatabase/></i></div>
-                  <div className="line mb-4" />
-                  <h4>Data Analytics</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/pro-technology" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
-              {/* Card 8 */}
-              <div className="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-                <div className="signle-service-item wow fadeInUp" data-wow-delay="800ms">
-                  <div className="service-bg bg-cover" />
-                  <div className="icon"><i className='flaticon-user-experience'><IoGameController/></i></div>
-                  <div className="line mb-4" />
-                  <h4>Gaming App Development</h4>
-                  <p className="pt-3">Back up your database, store in a safe and secure place while still maintaining.</p>
-                  <Link to="/services/it-consultant" className="infu-btn">Read More <FaLongArrowAltRight className="arrow-icon" /></Link>
-                </div>
-              </div>
-
+              ))}
             </div>  
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section - unchanged */}
       <section className="process-wrapper process-2 section-padding section-bg">
         <div className="container">
           <div className="section-title text-center">

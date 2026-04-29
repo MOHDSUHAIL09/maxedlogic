@@ -13,6 +13,7 @@ import {
 
 // Import logo image
 import blackLogo from '../assets/img/logo/black-logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -57,11 +58,11 @@ const Footer = () => {
                   <h4>Useful Links</h4>
                 </div>
                 <ul className="list-area">
-                  <li><a href="about.html"><FaCircle /> About </a></li>
-                  <li><a href="services.html"><FaCircle />Services</a></li>
-                  <li><a href="blog-news.html"><FaCircle /> Blog</a></li>
-                  <li><a href="contact.html"><FaCircle /> Contact Us</a></li>
-                  <li><a href="projects.html"><FaCircle /> Projects</a></li>
+                  <Link to= "about"><li><a><FaCircle /> About </a></li></Link>
+                  <Link to= "service"><li><a><FaCircle /> Services </a></li></Link>
+                  <Link to= "blogs"><li><a><FaCircle /> Blog </a></li></Link>
+                  <Link to= "contact"><li><a><FaCircle /> Contact Us </a></li></Link>
+                  <Link to= "Products"><li><a><FaCircle /> Products </a></li></Link>
                 </ul>
               </div>
             </div>
