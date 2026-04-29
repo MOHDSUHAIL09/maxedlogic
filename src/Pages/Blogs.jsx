@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 
 // Breadcrumb background
-import breadcrumbImg from '../assets/img/Blogs-img.Jpg';
+import breadcrumbImg from '../assets/img/blog/Blogs-img.jpg';
 
 // Blog post images (adjust extensions as needed – .jpg, .png, etc.)
 import blog01 from '../assets/img/blog/blog-01.jpg';
