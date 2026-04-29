@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 
 // Breadcrumb background
-import breadcrumbImg from '../assets/img/blog/Blogs-img.jpg';
+// import breadcrumbImg from '../assets/img/blog/Blogs-img.jpg';
 import blog01 from '../assets/img/blog/blog-01.jpg';
 import blog02 from '../assets/img/blog/blog-02.jpg';
 import blog03 from '../assets/img/blog/blog-03.jpg';
@@ -119,7 +119,7 @@ const Blogs = () => {
       <div
         className="breadcrumb-wrapper bg-cover"
         style={{
-          backgroundImage: `url(${breadcrumbImg})`,
+          // backgroundImage: `url(${breadcrumbImg})`,
           backgroundAttachment: 'scroll',
           backgroundPosition: 'center 0px',
           backgroundRepeat: 'no-repeat',
