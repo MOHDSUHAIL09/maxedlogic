@@ -9,7 +9,7 @@ import Contact from './Pages/Contact.jsx';
 import Service from "./Pages/Service/Service.jsx";
 import About from './Pages/About/About.jsx';
 import Products from './Pages/Products.jsx';
-import Blogs from './Pages/Blogs.jsx';
+// import Blogs from './Pages/Blogs.jsx';
 
 
 const ScrollToTop = () => {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       { path: 'service', element: <Service /> },        
       { path: 'about', element: <About /> },   
       {path: "Products", element: <Products/>},
-      {path: "blogs", element: <Blogs/>}
+      // {path: "blogs", element: <Blogs/>}
            
     ],
   },
