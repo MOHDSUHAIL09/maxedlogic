@@ -87,34 +87,31 @@ const ScrollEffects = ({ children }) => {
     });
   }, { scope: scopeRef });
 
-  // ========== 4. Hero Banner Content (.tp-play-up, .tp-play-up-2) ==========
-  useGSAP(() => {
-    const playUps = gsap.utils.toArray('.tp-play-up, .tp-play-up-2');
-    playUps.forEach(el => {
-      const tl = gsap.timeline({
+// ========== 5. Hero Circle Btn (.tp-btn-trigger) ==========
+useGSAP(() => {
+  const bounceBtns = gsap.utils.toArray(".tp-btn-bounce");
+  if (bounceBtns.length === 0) return;  // 👈 No elements → silently exit
+
+  // Apply initial styles only to existing elements
+  bounceBtns.forEach(btn => {
+    gsap.set(btn, { y: -150, opacity: 0 });
+    const triggerParent = btn.closest('.tp-btn-trigger');
+    if (triggerParent) {
+      gsap.to(btn, {
         scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-          end: 'bottom 60%',
-          scrub: false,
-          markers: false,
-          toggleActions: 'play none none none'
-        }
+          trigger: triggerParent,
+          start: "top center",
+          markers: false
+        },
+        duration: 1.5,
+        delay: 1,
+        ease: "bounce.out",
+        y: 0,
+        opacity: 1,
       });
-      const split = new SplitText(el, { type: "lines" });
-      gsap.set(el, { perspective: 400 });
-      split.split({ type: "lines" });
-      tl.from(split.lines, {
-        duration: 1,
-        delay: 0.2,
-        opacity: 0,
-        rotationX: -80,
-        force3D: true,
-        transformOrigin: "top center -40",
-        stagger: 0.1
-      });
-    });
-  }, { scope: scopeRef });
+    }
+  });
+}, { scope: scopeRef });
 
   // ========== 5. Hero Circle Btn (.tp-btn-trigger) ==========
   useGSAP(() => {

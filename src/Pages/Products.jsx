@@ -1,10 +1,10 @@
-  import React, { useEffect, useRef } from 'react';
+  import React from 'react';
   import { FaAngleDoubleRight } from 'react-icons/fa';
   import { Link } from 'react-router-dom';
   import Seo from '../components/Seo';
 
   // Breadcrumb background image
-  import breadcrumbImg from '../assets/img/product-image.jpg';
+  // import breadcrumbImg from '../assets/img/product-image.jpg';
 
   // Product images – make sure these files exist in your project
   import prodImg1 from '../assets/img/product/01.jpg';
@@ -15,20 +15,20 @@
   import prodImg6 from '../assets/img/product/06.jpg';
 
   const Products = () => {
-    const breadcrumbRef = useRef(null);
+    // const breadcrumbRef = useRef(null);
 
     // Parallax effect
-    useEffect(() => {
-      const handleScroll = () => {
-        if (breadcrumbRef.current) {
-          const scrollY = window.scrollY;
-          const parallaxY = scrollY * 0.5;
-          breadcrumbRef.current.style.backgroundPosition = `center ${parallaxY}px`;
-        }
-      };
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    // useEffect(() => {
+    //   const handleScroll = () => {
+    //     if (breadcrumbRef.current) {
+    //       const scrollY = window.scrollY;
+    //       const parallaxY = scrollY * 0.5;
+    //       breadcrumbRef.current.style.backgroundPosition = `center ${parallaxY}px`;
+    //     }
+    //   };
+    //   window.addEventListener('scroll', handleScroll);
+    //   return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
 
     // 6 products with unique ids and improved SEO descriptions
     const products = [
@@ -86,7 +86,7 @@
         />
 
         {/* Breadcrumb with Parallax */}
-        <div
+        {/* <div
           className="breadcrumb-wrapper bg-cover"
           style={{
             backgroundImage: `url(${breadcrumbImg})`,
@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Products Grid Section */}
         <section className="latest-news section-padding">
@@ -138,10 +138,7 @@
 
         {/* CSS – identical to blog cards (no Read More) */}
         <style>{`
-          .latest-news {
-            padding: 80px 0;
-            background: #f8faff;
-          }
+  
           .section-header {
             margin-bottom: 48px;
           }

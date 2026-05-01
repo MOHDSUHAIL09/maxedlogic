@@ -126,14 +126,14 @@ const Header = () => {
                   {/* <a href="#" className="search-trigger search-icon mb-1">
                     <FaSearch style={{ fontSize: "18px" }} />
                   </a> */}
+{/* 
+                  <div className="header-button d-none d-sm-block">
+                    <Link to="about" className="theme-btn black-btn">Explore More</Link>
+                  </div> */}
 
                   <div className="header-button d-none d-sm-block">
-                    <Link to="contact" className="theme-btn black-btn">Get In Touch</Link>
-                  </div>
-
-                  <div className="sidebar">
-                    <div className="nav-btn navSidebar-button" onClick={() => setIsInfoGroupActive(true)}>
-                      <span><CgMenuGridR style={{ width: "25px", height: "25px" }} /></span>
+                    <div className="" onClick={() => setIsInfoGroupActive(true)}>
+                      <Link to="about" className="theme-btn black-btn">Explore More</Link>
                     </div>
                   </div>
 
@@ -232,7 +232,7 @@ const Header = () => {
                   <ul className="list-style-one">
                     <li>
                       <FaPhone className="icon" />
-                      +91 9310008183
+                      +91 9310008143
                     </li>
                     <li>
                       <FaEnvelope className="icon" />
@@ -240,7 +240,7 @@ const Header = () => {
                     </li>
                     <li>
                       <FaMapMarkerAlt className="icon" />
-                      I Thum Tower C , Sector 62 Noida ,India
+                     436 I Thum Heights , Sector 62 Noida ,India
                     </li>
                   </ul>
                   <ul className="social-box">

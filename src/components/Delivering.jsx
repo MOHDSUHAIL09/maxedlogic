@@ -18,11 +18,11 @@ const Delivering = () => {
             <div className="col-xl-6 col-lg-6 col-12">
               <div className="section-title">
                 <div className="sub-title sub-title2">
-                  <span className="text-white">START WITH US</span>
+                  <span className="text-white ">START WITH US</span>
                 </div>
-                <h2 className="text-white">We’re Delivering Best Customer Experience</h2>
+                <h2 className="text-white paragraph-shadow">We’re Delivering Best Customer Experience</h2>
               </div>
-              <a href="about.html" className="theme-btn mt-4">Get Started Now</a>
+              <a href="about.html" className="theme-btn mt-4 paragraph-shadow">Get Started Now</a>
             </div>
             <div className="col-xl-6 col-lg-6 col-12">
               <div className="images">

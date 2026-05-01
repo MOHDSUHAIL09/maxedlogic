@@ -56,8 +56,8 @@ const Clients = () => {
         <div className="testimonial-header d-flex justify-content-between align-items-center flex-wrap">
           <div className="section-title">
             <div className="sub-title"><span>OUR TESTIMONIAL</span></div>
-            <h3>What our clients say about us</h3>
-            <p>Accelerate innovation with world-class tech teams We’ll match <br /> you to an entire remote team of incredible</p>
+            <h2>What our clients say about us</h2>
+            <p className='paragraph-shadow'>Accelerate innovation with world-class tech teams We’ll match <br /> you to an entire remote team of incredible</p>
           </div>
           <div className="swiper-nav-buttons d-flex gap-2">
             <button className="custom-swiper-prev" onClick={handlePrev}>
@@ -86,10 +86,10 @@ const Clients = () => {
                 </ul>
 
                 <h5>"Pioneers in AI Integration Services"</h5>
-                <p className="text">"Their advanced AI solutions helped us streamline operations and improve user experiences effortlessly."</p>
+                <p className="paragraph-shadow text">"Their advanced AI solutions helped us streamline operations and improve user experiences effortlessly."</p>
                 <div className="client-info">
                   <h6>William Jekson</h6>
-                  <p>Product Manager</p>
+                  <p className='Product_Manager'>Product Manager</p>
                 </div>
               </div>
             </div>
@@ -106,10 +106,10 @@ const Clients = () => {
                   <li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li>
                 </ul>
                 <h5>"Exceptional Service for AI Innovation"</h5>
-                <p className="text">"Integrating their AI solutions revolutionized our workflows, unlocking new efficiency and productivity levels."</p>
+                <p className="paragraph-shadow text">"Integrating their AI solutions revolutionized our workflows, unlocking new efficiency and productivity levels."</p>
                 <div className="client-info">
                   <h6>Steve Smit</h6>
-                  <p>Product Manager</p>
+                  <p className='Product_Manager'>Product Manager</p>
                 </div>
               </div>
             </div>
@@ -126,10 +126,10 @@ const Clients = () => {
                   <li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li>
                 </ul>
                 <h5>"Top AI Partner for <br /> Growth"</h5>
-                <p className="text">"Their AI-driven insights helped us make smarter decisions, boosting our overall business performance."</p>
+                <p className="paragraph-shadow text">"Their AI-driven insights helped us make smarter decisions, boosting our overall business performance."</p>
                 <div className="client-info">
                   <h6>Will Jacks</h6>
-                  <p>Product Manager</p>
+                  <p className='Product_Manager'>Product Manager</p>
                 </div>
               </div>
             </div>
@@ -146,10 +146,10 @@ const Clients = () => {
                   <li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li><li><FaStar /></li>
                 </ul>
                 <h5>"Pioneers in AI Integration Services"</h5>
-                <p className="text">"Integrating their AI solutions revolutionized our workflows, unlocking new efficiency and productivity levels."</p>
+                <p className="paragraph-shadow text">"Integrating their AI solutions revolutionized our workflows, unlocking new efficiency and productivity levels."</p>
                 <div className="client-info">
                   <h6>Michael Jon</h6>
-                  <p>Product Manager</p>
+                  <p className='Product_Manager'>Product Manager</p>
                 </div>
               </div>
             </div>

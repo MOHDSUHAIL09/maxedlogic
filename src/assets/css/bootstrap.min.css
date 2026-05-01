@@ -282,7 +282,8 @@ h4 {
 
     .h4,
     h4 {
-        font-size: 1.1rem
+        font-size: 1.1rem;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
     }
 }
 
@@ -301,7 +302,7 @@ h6 {
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 abbr[title] {
@@ -9169,7 +9170,8 @@ fieldset:disabled .btn {
 }
 
 .pt-3 {
-    padding-top: 1rem !important
+    padding-top: 1rem !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .pt-4 {
@@ -12670,11 +12672,11 @@ fieldset:disabled .btn {
         margin-right: 1.5rem !important;
         margin-left: 1.5rem !important
     }
-
+/* 
     .mx-xl-5 {
         margin-right: 3rem !important;
         margin-left: 3rem !important
-    }
+    } */
 
     .mx-xl-auto {
         margin-right: auto !important;

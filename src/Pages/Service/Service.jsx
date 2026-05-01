@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link,  } from 'react-router-dom';
 import { 
   FaCode, FaWrench, FaBrain, FaCogs, FaNetworkWired,
   FaLongArrowAltRight, FaComments, FaThumbsUp, FaAngleDoubleRight
@@ -12,54 +12,54 @@ import { RiSecurePaymentFill } from "react-icons/ri";
 import { FaDatabase } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
 
-import breadcrumbImg from '../../assets/img/breadcrumb.jpg';
+// import breadcrumbImg from '../../assets/img/breadcrumb.jpg';
 import processShape6 from '../../assets/img/process/shape-6.png';
 import processShape7 from '../../assets/img/process/shape-7.png';
 import Seo from '../../components/Seo';
 
 const Service = () => {
-  const { pathname, hash } = useLocation();
-  const breadcrumbRef = useRef(null);
+  // const { pathname, hash } = useLocation();
+  // const breadcrumbRef = useRef(null);
 
   // Scroll to top on route change (only if no hash)
-  useEffect(() => {
-    if (!hash) {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname, hash]);
+  // useEffect(() => {
+  //   if (!hash) {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }, [pathname, hash]);
 
   // Parallax effect for breadcrumb background
-  useEffect(() => {
-    const handleScroll = () => {
-      if (breadcrumbRef.current) {
-        const scrollY = window.scrollY;
-        const parallaxY = scrollY * 0.5;
-        breadcrumbRef.current.style.backgroundPosition = `center ${parallaxY}px`;
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (breadcrumbRef.current) {
+  //       const scrollY = window.scrollY;
+  //       const parallaxY = scrollY * 0.5;
+  //       breadcrumbRef.current.style.backgroundPosition = `center ${parallaxY}px`;
+  //     }
+  //   };
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   // Scroll to element based on URL hash (e.g., #app-development)
-  useEffect(() => {
-    if (hash) {
-      const id = hash.substring(1); // remove '#'
-      const element = document.getElementById(id);
-      if (element) {
-        // Slight delay to ensure all layout is stable
-        setTimeout(() => {
-          const headerOffset = 100; // Adjust based on your sticky header height
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }, 300);
-      }
-    }
-  }, [hash]);
+  // useEffect(() => {
+  //   if (hash) {
+  //     const id = hash.substring(1); // remove '#'
+  //     const element = document.getElementById(id);
+  //     if (element) {
+  //       // Slight delay to ensure all layout is stable
+  //       setTimeout(() => {
+  //         const headerOffset = 100; // Adjust based on your sticky header height
+  //         const elementPosition = element.getBoundingClientRect().top;
+  //         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  //         window.scrollTo({
+  //           top: offsetPosition,
+  //           behavior: "smooth"
+  //         });
+  //       }, 300);
+  //     }
+  //   }
+  // }, [hash]);
 
   // Services data with front and back content
   const servicesData = [
@@ -224,7 +224,7 @@ const Service = () => {
       />
 
       {/* Breadcrumb with Parallax Background */}
-      <div
+      {/* <div
         className="breadcrumb-wrapper bg-cover"
         style={{
           backgroundImage: `url(${breadcrumbImg})`,
@@ -247,7 +247,7 @@ const Service = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <section className="service-wrapper service-4 section-bg section-padding">
         <div className="container">

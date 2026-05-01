@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGlobe, FaMobileAlt, FaTags, FaPaintBrush, FaCreditCard } from 'react-icons/fa';
 import worldImg from '../assets/img/world.png';
-import whyChoose04 from '../assets/img/why-choose/04.png';
+import whyChoose04 from '../assets/img/about/06.png';
 
 const Choosesection2 = () => {
   const cardsData = [
@@ -23,7 +23,7 @@ const Choosesection2 = () => {
     {
       icon: <FaCreditCard />,
       title: "Payment Gateways",
-      description: "We integrate secure payment gateways for fast and safe online transactions."
+      description: "We integrate secure and reliable payment gateways to enable fast, seamless, and safe cryptocurrency transactions, ensuring a smooth and trustworthy payment experience for users"
     }
   ];
 
@@ -34,25 +34,30 @@ const Choosesection2 = () => {
           <div className="col-xl-6 col-lg-12 col-md-12 mt-xl-4 wow fadeInLeft" data-wow-delay="300ms">
             <div className="choose-us-content ms-xl-4 ps-xl-1">
               <div className="section-title">
-                <div className="sub-title"><span>WHY CHOOSE US</span></div>
+                <div className="paragraph-shadow sub-title"><span>WHY CHOOSE US</span></div>
                 <h2 className="split-text right">We Help You To Increase Your Sale Through Solutions.</h2>
               </div>
-              <p className="mt-4">
-                We build long-term client relationships, understand their needs, and deliver customized IT solutions using modern technology and <br /> best practices to support their goals.
+              <p clas className="paragraph-shadow mt-4">
+               We focus on building strong, long-term relationships with our clients by truly understanding their business goals, challenges, and evolving needs. Our approach is centered on collaboration, transparency, and trust, ensuring that every solution we deliver aligns perfectly with our clients’ vision. By leveraging modern technologies, industry best practices, and a forward-thinking mindset, we create customized IT solutions that are not only efficient and scalable but also future-ready. Our commitment goes beyond delivery—we continuously support and adapt our solutions to help our clients grow, innovate, and achieve sustained success in a rapidly changing digital landscape.
               </p>
-              <div className="reviews d-flex mt-4 pt-3">
+
+
+              <div className="reviews mt-4 d-flex justify-contant-spaceBetween gap-5">
                 <div className="infu">
-                  <img src={whyChoose04} alt="" />
-                  <h4>Join our 250+ <br /> Satisfied World Clients</h4>
+                  <img src={whyChoose04} alt="software-world-images" style={{ width: "250px", marginLeft: "-65px" }} />
+                  <h4 >Join our 20+ <br />World Class Clients</h4>
                 </div>
-                <div className="infu">
-                  <div className="head d-flex align-items-center">
-                    <div className="icon"><FaGlobe /></div>
-                    <h4>Global Company</h4>
-                  </div>
-                  <p>Our great team of more than to <br /> 1400 software experts member.</p>
+                <div className="infu mt-3">
+                  <h4>Global Company</h4>
+                  <p className='paragraph-shadow' style={{maxWidth: "300px"}}>Powered by 4️⃣+ expert software professionals, delivering reliable and innovative IT solutions worldwide.</p>
                 </div>
               </div>
+
+
+
+
+
+
             </div>
           </div>
 
@@ -74,7 +79,7 @@ const Choosesection2 = () => {
                         <div className="flip-card-back">
                           <div className="icon">{card.icon}</div>
                           <h4>{card.title}</h4>
-                          <p>{card.description}</p>
+                          <p className='paragraph-shadow'>{card.description}</p>
                         </div>
                       </div>
                     </div>
@@ -211,7 +216,7 @@ const Choosesection2 = () => {
           @media (max-width: 768px) {
             .flip-card {
               height: 220px;
-            }
+            } 
             .flip-card-front .icon, 
             .flip-card-back .icon {
               font-size: 36px;

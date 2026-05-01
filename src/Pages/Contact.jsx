@@ -11,7 +11,7 @@ import shape22 from '../assets/img/shape/shape-22.png';
 import avatarImg from '../assets/img/Avatar.png';
 
 const Contact = () => {
-  // Form state (same as before)
+  // Form state
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -26,10 +26,13 @@ const Contact = () => {
 
   const [budget] = useState({ min: 56, max: 1578 });
 
-  // ✅ Refs for parallax
+  // ✅ WhatsApp number (without '+' or spaces)
+  const WHATSAPP_NUMBER = '917078264972';  // Your provided number with country code
+
+  // Refs for parallax
   const breadcrumbRef = useRef(null);
 
-  // ✅ Parallax effect
+  // Parallax effect
   useEffect(() => {
     const handleScroll = () => {
       if (breadcrumbRef.current) {
@@ -59,10 +62,58 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, agreeTerms: e.target.checked }));
   };
 
+  // ✅ WhatsApp submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { ...formData, budget });
-    // Add your API call here
+
+    // Validate required fields
+    if (!formData.firstName.trim()) {
+      alert('Please enter your First Name');
+      return;
+    }
+    if (!formData.lastName.trim()) {
+      alert('Please enter your Last Name');
+      return;
+    }
+    if (!formData.email.trim()) {
+      alert('Please enter your Email address');
+      return;
+    }
+    if (!formData.agreeTerms) {
+      alert('You must agree to the terms and conditions');
+      return;
+    }
+
+    // Build WhatsApp message
+    const servicesText = formData.services.length > 0 
+      ? formData.services.join(', ') 
+      : 'None selected';
+
+    const message = `*📞 New Contact Form Submission*
+
+*Name:* ${formData.firstName} ${formData.lastName}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || 'Not provided'}
+*Country:* ${formData.country || 'Not provided'}
+*Company Type:* ${formData.companyType || 'Not provided'}
+
+*Services Needed:* ${servicesText}
+*Budget Range:* $${budget.min} - $${budget.max}
+
+*Message:*
+${formData.message || 'No message provided'}
+
+*Terms Agreed:* ✅ Yes`;
+
+    // Encode for URL
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Optional: Show confirmation
+    alert('Redirecting to WhatsApp... Please send the message there.');
   };
 
   return (
@@ -74,40 +125,12 @@ const Contact = () => {
         path="/contact"
       />
 
-      {/* Breadcrumb Section with Parallax */}
-      <div
-        className="breadcrumb-wrapper bg-cover"
-        style={{
-          backgroundImage: `url(${breadcrumbImg})`,
-          backgroundAttachment: 'scroll',
-          backgroundPosition: 'center 0px',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
-        }}
-        ref={breadcrumbRef}
-      >
-        <div className="container">
-          <div className="page-heading">
-            <div className="breadcrumb-sub-title">
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                Contact Us
-              </h1>
-              <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                  <li><FaAngleDoubleRight/></li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Breadcrumb Section with Parallax (commented as in original) */}
+      {/* ... keep your breadcrumb markup exactly as you had ... */}
 
-      {/* Contact Info Section (same) */}
-      <section className="contact-page-wrap section-padding">
-        <div className="container">
-          <div className="row g-4">
+      {/* Contact Info Section */}
+      <section className="contact-page-wrap ">
+          <div className="row  contact-addresh">
             <div className="col-lg-4 col-md-6 col-12">
               <div className="single-contact-card d-flex align-items-center">
                 <div className="icon">
@@ -115,7 +138,7 @@ const Contact = () => {
                 </div>
                 <div className="title">
                   <span>Call Us</span>
-                  <h4>+91 9310008183</h4>
+                  <h4>+91 9310008143</h4>
                 </div>
               </div>
             </div>
@@ -126,7 +149,7 @@ const Contact = () => {
                 </div>
                 <div className="title">
                   <span>Our Location</span>
-                  <h4>I Thum Tower C , Sector 62 Noida ,India</h4>
+                  <h4>I Thum Heights , Sector 62 Noida.</h4>
                 </div>
               </div>
             </div>
@@ -138,16 +161,15 @@ const Contact = () => {
                 <div className="title">
                   <span>Mail us</span>
                   <h4>
-                    <a href="mailto:info@maxedlogic.com">info@maxedlogic.com</a>
+                    <a href="mailto:info@maxedlogic.com">hr@maxedlogic.com</a>
                   </h4>
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </section>
 
-      {/* Contact Form Section (unchanged) */}
+      {/* Contact Form Section */}
       <section className="contact-us-wrapper contact-us-2 section-padding">
         <div className="shape">
           <img className="shape-1" src={shape21} alt="Decorative shape" />
@@ -216,18 +238,6 @@ const Contact = () => {
                             name="phone"
                             placeholder="Your Phone"
                             value={formData.phone}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6 pe-0 wow fadeInUp" data-wow-delay=".6">
-                        <span>Country</span>
-                        <div className="form-clt">
-                          <input
-                            type="text"
-                            name="country"
-                            placeholder="Your Country"
-                            value={formData.country}
                             onChange={handleInputChange}
                           />
                         </div>
@@ -306,7 +316,15 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section (unchanged) */}
+
+
+
+
+
+
+
+
+      {/* Map Section */}
       <section className="map-section section-padding pt-0">
         <div className="container">
           <div className="row">
@@ -314,7 +332,7 @@ const Contact = () => {
               <div className="google-map position-relative">
                 <iframe
                   title="Office Location - I-Thum Tower C, Sector 62, Noida"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.0199999999996!2d77.3533903!3d28.573811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5d3c8b6a5a1%3A0x8e5a6c2e5c8f5b2d!2sI-Thum%20Tower%20C%2C%20Sector%2062%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3502.039501678236!2d77.36767197550064!3d28.628578175666913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM3JzQyLjkiTiA3N8KwMjInMTIuOSJF!5e0!3m2!1sen!2sin!4v1777469472098!5m2!1sen!2sin"
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
@@ -322,26 +340,6 @@ const Contact = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-              
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '15px',
-                    right: '15px',
-                    backgroundColor: 'white',
-                    padding: '8px 16px',
-                    borderRadius: '30px',
-                    boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    zIndex: 10,
-                    fontSize: '14px',
-                    fontWeight: '500',
-                  }}
-                >
-                  
-                </div>
               </div>
             </div>
           </div>

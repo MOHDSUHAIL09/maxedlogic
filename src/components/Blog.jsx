@@ -23,7 +23,7 @@ const Blog = () => {
           </div>
           <h2>Our Latest Insights & Blog</h2>
         </div>
-        <p className="text-center mt-3">
+        <p className="paragraph-shadow text-center mt-3">
           Accelerate innovation with world-class tech teams We’ll match <br />
           you to an entire remote team of incredible
         </p>
@@ -34,24 +34,22 @@ const Blog = () => {
               <div className="single-blog-item">
                 <div className="image">
                   <img src={blog01} alt="" />
-                  <img src={blog01} alt="" />
                 </div>
                 <div className="content">
                   <ul>
-                    <li>Technology</li>
+                    <li className='paragraph-shadow'>Technology</li>
                     <li><FaCircle /></li>
-                    <li>12 January, 2025</li>
+                    <li className='paragraph-shadow'>12 January, 2025</li>
                   </ul>
-                  <h3>
-                    <a href="blogs-details.html">Exploring the Exciting Features of Node.js Latest</a>
+                  <h3 className='paragraph-shadow'>
+                   Exploring the Exciting Features of Node.js Latest
                   </h3>
-                  <p>
+                  <p className='paragraph-shadow'> 
                     Node.js, the popular runtime environment for executing JavaScript code server-side, continues to evolve with each new version,
                   </p>
-                    <Link to= "blogs">
-                  <a className="link-btn">
-                    Read More 
-                  </a></Link>
+                  <Link to="/blogs" className="paragraph-shadow link-btn">
+                    Read More
+                  </Link>
                 </div>
               </div>
             </div>
@@ -61,24 +59,22 @@ const Blog = () => {
               <div className="single-blog-item">
                 <div className="image">
                   <img src={blog02} alt="" />
-                  <img src={blog02} alt="" />
                 </div>
                 <div className="content">
                   <ul>
-                    <li>Technology</li>
+                    <li className='paragraph-shadow'>Technology</li>
                     <li><FaCircle /></li>
-                    <li>12 January, 2025</li>
+                    <li className='paragraph-shadow'>28 April, 2025</li>
                   </ul>
-                  <h3>
-                    <a href="blogs-details.html">Flutter: Empowering Mobile App Development with Speed</a>
+                  <h3 className='paragraph-shadow'>
+                    Flutter: Empowering Mobile App Development with Speed
                   </h3>
-                  <p>
+                  <p className='paragraph-shadow'>
                     In the fast-paced world of mobile app development, developers are constantly seeking tools and frameworks that enable
                   </p>
-                  <Link to= "blogs">
-                  <a className="link-btn">
-                    Read More 
-                  </a></Link>
+                  <Link to="/blogs" className="paragraph-shadow link-btn">
+                    Read More
+                  </Link>
                 </div>
               </div>
             </div>
@@ -88,24 +84,22 @@ const Blog = () => {
               <div className="single-blog-item">
                 <div className="image">
                   <img src={blog03} alt="" />
-                  <img src={blog03} alt="" />
                 </div>
                 <div className="content">
                   <ul>
-                    <li>Technology</li>
+                    <li className='paragraph-shadow'>Technology</li>
                     <li><FaCircle /></li>
-                    <li>12 January, 2025</li>
+                    <li className='paragraph-shadow'>24 Aughst, 2025</li>
                   </ul>
-                  <h3>
-                    <a href="blogs-details.html">.NET MAUI: Build Cross-Platform Apps with C#</a>
+                  <h3 className='paragraph-shadow'>
+                    .NET MAUI: Build Cross-Platform Apps with C#
                   </h3>
-                  <p>
+                  <p className='paragraph-shadow'>
                     seamless integration with scalable backend services built on ASP.NET Core, enabling real‑time sync, security, and cloud readiness.
                   </p>
-                   <Link to= "blogs">
-                  <a className="link-btn">
-                    Read More 
-                  </a></Link>
+                  <Link to="/blogs" className="paragraph-shadow link-btn">
+                    Read More
+                  </Link>
                 </div>
               </div>
             </div>
@@ -115,4 +109,5 @@ const Blog = () => {
     </section>
   );
 };
+
 export default Blog;

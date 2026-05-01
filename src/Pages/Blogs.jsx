@@ -116,7 +116,7 @@ const Blogs = () => {
       />
 
       {/* Breadcrumb */}
-      <div
+      {/* <div
         className="breadcrumb-wrapper bg-cover"
         style={{
           backgroundImage: `url(${breadcrumbImg})`,
@@ -139,7 +139,7 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Blog Grid */}
       <section className="latest-news section-padding">

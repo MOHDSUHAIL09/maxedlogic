@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { FaChartLine, FaShieldAlt, FaPaintBrush, FaCube, FaDatabase, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { GrCloudSoftware } from "react-icons/gr";
 import { MdOutlineAppShortcut } from "react-icons/md";
@@ -43,7 +43,7 @@ const servicesData = [
   {
     id: 4,
     title: 'Blockchain Development',
-    description: 'Blockchain development is building decentralized apps using blockchain technology.',
+    description: 'Blockchain development is building decentralized apps using blockchain...',
     icon: <SiBlockchaindotcom />,
     image: serviceImg04,
   },
@@ -54,29 +54,24 @@ const servicesData = [
     icon: <FaConnectdevelop />,
     image: serviceImg05,
   },
-   {
+  {
     id: 1,
     title: 'Payment Gateway',
-    description: 'A payment gateway securely processes online payments.',
+    description: 'A payment gateway securely processes Crypto payments.',
     icon: <RiSecurePaymentLine />,
     image: serviceImg01,
   },
 ];
 
 const Service = () => {
-  // Refs for navigation buttons
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperInstance, setSwiperInstance] = useState(null);
 
-  // Attach navigation buttons after swiper is initialized and refs are ready
   useEffect(() => {
     if (swiperInstance && prevRef.current && nextRef.current) {
-      // Assign the button elements to Swiper navigation
       swiperInstance.params.navigation.prevEl = prevRef.current;
       swiperInstance.params.navigation.nextEl = nextRef.current;
-      
-      // Re-initialize navigation
       swiperInstance.navigation.destroy();
       swiperInstance.navigation.init();
       swiperInstance.navigation.update();
@@ -92,11 +87,11 @@ const Service = () => {
         </div>
         <div className="container">
           <div className="service-inner">
-            {/* Top Content - Years of Experience & Titles */}
+            {/* Top Content */}
             <div className="row">
               <div className="col-xl-7 col-lg-6 col-md-12 col-12 wow fadeInLeft" data-wow-delay="300ms">
                 <div className="countbox">
-                  <h3><span className="count">14</span>+</h3>
+                  <h3><span className="count">8</span>+</h3>
                   <p>Years of Experience</p>
                 </div>
                 <div className="section-title mt-4">
@@ -107,9 +102,9 @@ const Service = () => {
               </div>
               <div className="col-xl-5 col-lg-6 col-md-12 col-12 wow fadeInRight" data-wow-delay="300ms">
                 <div className="title">
-                  <h3>
+                  <h2 className='paragraph-shadow'>
                     We are technology solutions providing company all over the world.
-                  </h3>
+                  </h2>
                 </div>
               </div>
             </div>
@@ -121,8 +116,8 @@ const Service = () => {
                   modules={[Navigation]}
                   spaceBetween={30}
                   slidesPerView={1}
-                  navigation={false} // Disable default navigation
-                  onSwiper={setSwiperInstance} // Get swiper instance
+                  navigation={false}
+                  onSwiper={setSwiperInstance}
                   breakpoints={{
                     576: { slidesPerView: 1 },
                     768: { slidesPerView: 2 },
@@ -131,13 +126,9 @@ const Service = () => {
                   loop={false}
                   className="service-swiper"
                 >
-
-                  
                   {servicesData.map((service) => (
-                    
                     <SwiperSlide key={service.id}>
-                      <Link to="service">
-                      <div className="dd single-service-item h-100">
+                      <Link to={`/service/${service.id}`} className="dd single-service-item h-100">
                         <div className="shape">
                           <img className="shape-3" src={serviceShape1} alt="" />
                           <img className="shape-4" src={serviceShape2} alt="" />
@@ -147,17 +138,15 @@ const Service = () => {
                         </div>
                         <div className="content">
                           <div className="icon"><i>{service.icon}</i></div>
-                          <h4><a href="services-details.html">{service.title}</a></h4>
-                          <p>{service.description}</p>
+                          <h4>{service.title}</h4>
+                          <p className='paragraph-shadow'>{service.description}</p>
                         </div>
-                      </div>
                       </Link>
                     </SwiperSlide>
-                    
                   ))}
                 </Swiper>
 
-                {/* Custom Navigation Buttons with refs */}
+                {/* Custom Navigation Buttons */}
                 <div className="service-nav-buttons">
                   <button ref={prevRef} className="service-custom-prev">
                     <FaArrowLeft />
@@ -180,16 +169,14 @@ const Service = () => {
         .service-slider-wrapper {
           position: relative;
         }
-        /* Navigation buttons container - positioned at top right */
         .service-nav-buttons {
           position: absolute;
-          top: -30px;
+          top: -50px;
           right: 20px;
           display: flex;
           gap: 12px;
           z-index: 20;
         }
-        /* Unique button styles */
         .service-custom-prev,
         .service-custom-next {
           width: 44px;
@@ -213,10 +200,9 @@ const Service = () => {
           border-color: #007bff;
           transform: scale(1.05);
         }
-        /* Responsive adjustments */
         @media (max-width: 768px) {
           .service-nav-buttons {
-            top: -10px;
+            padding-top: 10px;
             gap: 8px;
           }
           .service-custom-prev,
