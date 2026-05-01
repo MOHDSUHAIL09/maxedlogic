@@ -11,7 +11,7 @@ const About = () => {
     <>
       <section className="about-wrapper about-1 style-2 about-page section-padding">
         <div className="container">
-          <div className="row g-5">
+          <div className="row g-5 mt-3">
             <div className="col-xxl-7 col-xl-6 col-lg-12 wow fadeInLeft" data-wow-delay="300ms">
               <div className="about-images-2">
                 <img className="shape-1" src={shape1} alt="" style={{ zIndex: "9" }} />

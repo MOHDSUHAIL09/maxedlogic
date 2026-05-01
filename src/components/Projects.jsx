@@ -58,7 +58,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="case-study-1">
+    <section className="case-study-1 mt-5">
       
       {/* Shape */}
       <div className="shape">

@@ -51,13 +51,12 @@ const Clients = () => {
   };
 
   return (
-    <section className="testimonial-wrapper testimonial-4 section-padding">
-      <div className="container">
+    <section className="testimonial-wrapper testimonial-4 section-padding mt-5 ">
         <div className="testimonial-header d-flex justify-content-between align-items-center flex-wrap">
           <div className="section-title">
             <div className="sub-title"><span>OUR TESTIMONIAL</span></div>
-            <h2>What our clients say about us</h2>
-            <p className='paragraph-shadow'>Accelerate innovation with world-class tech teams We’ll match <br /> you to an entire remote team of incredible</p>
+            <h2 className='mb-2'>What our clients say about us</h2>
+            <p className='paragraph-shadow mb-4'>Accelerate innovation with world-class tech teams We’ll match <br /> you to an entire remote team of incredible</p>
           </div>
           <div className="swiper-nav-buttons d-flex gap-2">
             <button className="custom-swiper-prev" onClick={handlePrev}>
@@ -68,7 +67,7 @@ const Clients = () => {
             </button>
           </div>
         </div>
-      </div>
+    
 
       <div className="testimonial-inner mt-2 p-5">
         <div className="swiper testimonial-4" ref={swiperRef}>

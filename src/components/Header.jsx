@@ -133,7 +133,7 @@ const Header = () => {
 
                   <div className="header-button d-none d-sm-block">
                     <div className="" onClick={() => setIsInfoGroupActive(true)}>
-                      <Link to="about" className="theme-btn black-btn">Explore More</Link>
+                      <div className="theme-btn black-btn">Explore More</div>
                     </div>
                   </div>
 

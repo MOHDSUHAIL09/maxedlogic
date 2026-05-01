@@ -46,6 +46,23 @@ const Footer = () => {
               </div>
             </div>
 
+
+                     {/* Our Services (unchanged) */}
+            <div className="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="600ms">
+              <div className="single-footer-widget ms-xxl-4 ps-xxl-3">
+                <div className="widget-head">
+                  <h4>Our Services</h4>
+                </div>
+                <ul className="list-area">
+                  <li><a href="/contact"><FaCircle /> Blockchain technology</a></li>
+                  <li><a href="/contact"><FaCircle /> Advanced Technology</a></li>
+                  <li><a href="/contact"><FaCircle /> Infrastructure Technology</a></li>
+                  <li><a href="/contact"><FaCircle /> Data Management</a></li>
+                  <li><a href="/contact"><FaCircle /> Security Management</a></li>
+                </ul>
+              </div>
+            </div>
+
             {/* Useful Links – FIXED */}
             <div className="col-xl-2 col-lg-6 wow fadeInUp" data-wow-delay="400ms">
               <div className="single-footer-widget ms-xxl-2">
@@ -58,22 +75,6 @@ const Footer = () => {
                   <li><Link to="/blogs"><FaCircle /> Blog</Link></li>
                   <li><Link to="/contact"><FaCircle /> Contact Us</Link></li>
                   <li><Link to="/products"><FaCircle /> Products</Link></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Our Services (unchanged) */}
-            <div className="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="600ms">
-              <div className="single-footer-widget ms-xxl-4 ps-xxl-3">
-                <div className="widget-head">
-                  <h4>Our Services</h4>
-                </div>
-                <ul className="list-area">
-                  <li><a href="/contact"><FaCircle /> Blockchain technology</a></li>
-                  <li><a href="/contact"><FaCircle /> Advanced Technology</a></li>
-                  <li><a href="/contact"><FaCircle /> Infrastructure Technology</a></li>
-                  <li><a href="/contact"><FaCircle /> Data Management</a></li>
-                  <li><a href="/contact"><FaCircle /> Security Management</a></li>
                 </ul>
               </div>
             </div>

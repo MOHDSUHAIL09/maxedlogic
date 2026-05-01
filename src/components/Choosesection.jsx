@@ -30,7 +30,7 @@ const Choosesection2 = () => {
   return (
     <section className="choose-us-wrapper choose-us-3 section-padding section-bg ">
       <div className="container ">
-        <div className="row g-5">
+        <div className="row g-5 mt-3">
           <div className="col-xl-6 col-lg-12 col-md-12 mt-xl-4 wow fadeInLeft" data-wow-delay="300ms">
             <div className="choose-us-content ms-xl-4 ps-xl-1">
               <div className="section-title">
