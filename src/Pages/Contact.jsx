@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';   // ✅ SEO component import
 
 // Import images
-import breadcrumbImg from '../assets/img/contact-imgage.jpg';
 import shape21 from '../assets/img/shape/shape-21.png';
 import shape11 from '../assets/img/shape/shape-11.png';
 import shape22 from '../assets/img/shape/shape-22.png';
-import avatarImg from '../assets/img/Avatar.png';
+
 
 const Contact = () => {
   // Form state
@@ -129,8 +128,8 @@ ${formData.message || 'No message provided'}
       {/* ... keep your breadcrumb markup exactly as you had ... */}
 
       {/* Contact Info Section */}
-      <section className="contact-page-wrap ">
-          <div className="row  contact-addresh">
+     <section className="contact-page-wrap mt-5 px-2 px-sm-5 px-md-5">
+          <div className="row g-2">
             <div className="col-lg-4 col-md-6 col-12">
               <div className="single-contact-card d-flex align-items-center">
                 <div className="icon">
@@ -302,11 +301,7 @@ ${formData.message || 'No message provided'}
                     <div className="contact-btn d-flex align-items-center justify-content-between flex-wrap mt-4">
                       <button type="submit" className="theme-btn black-btn">
                         Send Message
-                      </button>
-                      <div className="infu pt-xxl-0 pt-3">
-                        <img src={avatarImg} alt="Customer support avatar" />
-                        <p>Meet With Expert</p>
-                      </div>
+                      </button>               
                     </div>
                   </div>
                 </div>
@@ -315,10 +310,6 @@ ${formData.message || 'No message provided'}
           </div>
         </div>
       </section>
-
-
-
-
 
 
 

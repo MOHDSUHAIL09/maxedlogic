@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-content">
                   <p>We offer a wide range of services and expertise in various fields of information technology.</p>
-                  <h5>Subscribe Now</h5>
+                  <h5>Contact Now</h5>
                   <div className="footer-input border-radius-none">
                     <input type="email" id="email2" placeholder="Your Email" />
                     <button className="newsletter-btn border-radius-none" type="submit">

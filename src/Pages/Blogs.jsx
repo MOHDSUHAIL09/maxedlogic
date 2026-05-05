@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 
 // Breadcrumb background
-import breadcrumbImg from '../assets/img/blog/Blogs-img.jpg';
+// import breadcrumbImg from '../assets/img/blog/Blogs-img.jpg';
 import blog01 from '../assets/img/blog/blog-01.jpg';
 import blog02 from '../assets/img/blog/blog-02.jpg';
 import blog03 from '../assets/img/blog/blog-03.jpg';
@@ -39,7 +39,8 @@ const Blogs = () => {
       title: 'Building Scalable APIs with Node.js and Express',
       excerpt: 'Node.js has become the go‑to runtime for building fast, scalable back‑end services. In this article, we explore how to structure Express.js applications, handle asynchronous operations efficiently, integrate with databases like MongoDB, and deploy to cloud platforms such as AWS or Heroku. Perfect for developers moving from frontend to full‑stack.',
       image: blog01,
-      alt: 'Node.js development'
+      alt: 'Node.js development',
+      button01: "Read More",
     },
     {
       id: 2,
@@ -167,94 +168,6 @@ const Blogs = () => {
         </div>
       </section>
 
-      {/* CSS (same as before) */}
-      <style>{`
-        .latest-news {
-          padding: 80px 0;
-          background: #f8faff;
-        }
-        .section-header {
-          margin-bottom: 48px;
-        }
-        .section-header .sub-title span {
-          font-size: 14px;
-          color: #1e69ba;
-          font-weight: 600;
-          display: inline-block;
-          margin-bottom: 12px;
-        }
-        .section-header h2 {
-          font-size: 36px;
-          font-weight: 700;
-          margin: 0;
-          color: #1e2a3a;
-        }
-        .news-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
-        }
-        .news-card {
-          background: #fff;
-          border-radius: 16px;
-          overflow: hidden;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
-        .news-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .news-image {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-          display: block;
-        }
-        .news-date {
-          font-size: 14px;
-          color: #1397de;
-          margin: 20px 24px 12px 24px;
-          font-weight: 500;
-        }
-        .news-title {
-          font-size: 22px;
-          font-weight: 700;
-          line-height: 1.3;
-          margin: 0 24px 16px 24px;
-          color: #1e2a3a;
-        }
-          .news-title:hover{
-          color: #1397de;
-          cursor: pointer
-          }
-        .news-excerpt {
-          font-size: 15px;
-          line-height: 1.6;
-          color: #4a5568;
-          margin: 0 24px 28px 24px;
-          flex: 1;
-        }
-        @media (max-width: 992px) {
-          .news-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 576px) {
-          .news-grid {
-            grid-template-columns: 1fr;
-          }
-          .section-header h2 {
-            font-size: 28px;
-          }
-          .news-title {
-            font-size: 20px;
-          }
-        }
-      `}</style>
     </>
   );
 };

@@ -76,7 +76,7 @@ const Header = () => {
                 </div>
                 <div className="header-right">
                   <div className="mean__menu-wrapper">
-                    <div className="main-menu d-none d-xl-block">
+                    <div className="main-menu d-none d-lg-block">
                       <nav id="mobile-menu">
                         <ul>
                           <li>
@@ -130,14 +130,13 @@ const Header = () => {
                   <div className="header-button d-none d-sm-block">
                     <Link to="about" className="theme-btn black-btn">Explore More</Link>
                   </div> */}
-
-                  <div className="header-button d-none d-sm-block">
+                  <div className="header-button d-none d-lg-block">
                     <div className="" onClick={() => setIsInfoGroupActive(true)}>
                       <div className="theme-btn black-btn">Explore More</div>
                     </div>
                   </div>
 
-                  <div className="header__hamburger d-xl-none my-auto">
+                  <div className="header__hamburger d-lg-none my-auto">
                     <div className="sidebar__toggle" onClick={toggleOffcanvas}>
                       <FaBars />
                     </div>

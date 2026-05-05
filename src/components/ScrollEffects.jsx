@@ -53,6 +53,7 @@ const ScrollEffects = ({ children }) => {
         scrollTrigger: {
           trigger: el,
           start: "top 90%",
+          toggleActions: "play none none none" // Reverse hataya
         }
       });
     });
@@ -69,7 +70,7 @@ const ScrollEffects = ({ children }) => {
           end: 'bottom 100%',
           scrub: 1,
           markers: false,
-          toggleActions: 'play none none none'
+          toggleActions: 'play none none none' // Reverse hataya
         }
       });
       const split = new SplitText(el, { type: "words, lines" });
@@ -87,44 +88,21 @@ const ScrollEffects = ({ children }) => {
     });
   }, { scope: scopeRef });
 
-// ========== 5. Hero Circle Btn (.tp-btn-trigger) ==========
-useGSAP(() => {
-  const bounceBtns = gsap.utils.toArray(".tp-btn-bounce");
-  if (bounceBtns.length === 0) return;  // 👈 No elements → silently exit
-
-  // Apply initial styles only to existing elements
-  bounceBtns.forEach(btn => {
-    gsap.set(btn, { y: -150, opacity: 0 });
-    const triggerParent = btn.closest('.tp-btn-trigger');
-    if (triggerParent) {
-      gsap.to(btn, {
-        scrollTrigger: {
-          trigger: triggerParent,
-          start: "top center",
-          markers: false
-        },
-        duration: 1.5,
-        delay: 1,
-        ease: "bounce.out",
-        y: 0,
-        opacity: 1,
-      });
-    }
-  });
-}, { scope: scopeRef });
-
-  // ========== 5. Hero Circle Btn (.tp-btn-trigger) ==========
+  // ========== 4. Hero Circle Btn (.tp-btn-trigger) ==========
   useGSAP(() => {
-    gsap.set(".tp-btn-bounce", { y: -150, opacity: 0 });
     const bounceBtns = gsap.utils.toArray(".tp-btn-bounce");
+    if (bounceBtns.length === 0) return;
+
     bounceBtns.forEach(btn => {
+      gsap.set(btn, { y: -150, opacity: 0 });
       const triggerParent = btn.closest('.tp-btn-trigger');
       if (triggerParent) {
         gsap.to(btn, {
           scrollTrigger: {
             trigger: triggerParent,
             start: "top center",
-            markers: false
+            markers: false,
+            toggleActions: "play none none none" // Reverse hataya
           },
           duration: 1.5,
           delay: 1,
@@ -136,7 +114,7 @@ useGSAP(() => {
     });
   }, { scope: scopeRef });
 
-  // ========== 6. Draw Border (.bw-draw-border) ==========
+  // ========== 5. Draw Border (.bw-draw-border) ==========
   useGSAP(() => {
     const borders = gsap.utils.toArray('.bw-draw-border');
     borders.forEach(line => {
@@ -156,7 +134,7 @@ useGSAP(() => {
     });
   }, { scope: scopeRef });
 
-  // ========== 7. Special Image Reveal (.reveal-*) ==========
+  // ========== 6. Special Image Reveal (.reveal-*) ==========
   useGSAP(() => {
     const revealAnimation = (selector, axis, percent, scale) => {
       gsap.utils.toArray(selector).forEach(revealItem => {
@@ -165,7 +143,7 @@ useGSAP(() => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: revealItem,
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none" // Reverse hataya
           },
         });
         tl.set(revealItem, { autoAlpha: 1 })
@@ -188,7 +166,7 @@ useGSAP(() => {
     revealAnimation(".reveal-bottom", "y", -100, 1.3);
   }, { scope: scopeRef });
 
-  // ========== 8. DEFAULT IMAGE FADE-IN (bina class ke sab images) ==========
+  // ========== 7. DEFAULT IMAGE FADE-IN ==========
   useGSAP(() => {
     const allImages = gsap.utils.toArray('img:not(.no-effect)');
     allImages.forEach(img => {
@@ -203,50 +181,49 @@ useGSAP(() => {
         scrollTrigger: {
           trigger: img,
           start: "top 85%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none" // Reverse hataya
         }
       });
     });
   }, { scope: scopeRef });
 
-  // ========== 9. DEFAULT CARD FADE-UP ==========
-useGSAP(() => {
-  const cards = gsap.utils.toArray('.portfolio-item, .single-feature-item, .fade-up');
-  cards.forEach(card => {
-    gsap.from(card, {
-      opacity: 0,
-      y: 50,
-      duration: 0.7,
-      scrollTrigger: {
-        trigger: card,
-        start: "top 90%",
-        toggleActions: "play none none reverse",
-      }
+  // ========== 8. DEFAULT CARD FADE-UP ==========
+  useGSAP(() => {
+    const cards = gsap.utils.toArray('.portfolio-item, .single-feature-item, .fade-up');
+    cards.forEach(card => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.7,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+          toggleActions: "play none none none" // Reverse hataya
+        }
+      });
     });
-  });
-}, { scope: scopeRef });
+  }, { scope: scopeRef });
 
-  // ========== 10. 🔥 PARAGRAPH & HEADING: RIGHT SIDE AAYE + FAST ==========
+  // ========== 9. PARAGRAPH & HEADING ==========
   useGSAP(() => {
     const texts = gsap.utils.toArray('p:not(.no-effect), h1:not(.no-effect), h2:not(.no-effect), h3:not(.no-effect), .text-fade');
     texts.forEach(text => {
       if (text.closest('.split-text, .text-splite-up, .tp-play-up')) return;
-      // Right side se aayega (x: 50), duration kam (0.4), opacity fade bhi hoga
       gsap.from(text, {
         opacity: 0,
-        x: 50,          // right side se left ko aayega
-        duration: 0.4,  // kam time
+        x: 50,
+        duration: 0.4,
         ease: "power2.out",
         scrollTrigger: {
           trigger: text,
           start: "top 90%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none" // Reverse hataya
         }
       });
     });
   }, { scope: scopeRef });
 
-  // ========== 11. Hover Effect (.bw-hover-image) ==========
+  // ========== 10. Hover Effect (.bw-hover-image) ==========
   useEffect(() => {
     const hoverItems = document.querySelectorAll('.bw-hover-image');
     if (!hoverItems.length) return;
@@ -285,7 +262,7 @@ useGSAP(() => {
     };
   }, []);
 
-  // ========== 12. Data-background ==========
+  // ========== 11. Data-background ==========
   useEffect(() => {
     const dataBgElements = document.querySelectorAll('[data-background]');
     dataBgElements.forEach(el => {
@@ -296,7 +273,7 @@ useGSAP(() => {
     });
   }, []);
 
-  // ========== 13. Refresh ScrollTrigger on load and resize ==========
+  // ========== 12. Refresh ScrollTrigger ==========
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener('load', refresh);

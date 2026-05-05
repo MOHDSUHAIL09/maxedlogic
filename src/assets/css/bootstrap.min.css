@@ -214,29 +214,12 @@ hr {
     border-top: var(--bs-border-width) solid;
     opacity: .25
 }
-/* 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 0;
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--bs-heading-color)
-} */
+
+
 
 .h1,
 h1 {
-    font-size: calc(1.375rem + 1.5vw)
+    font-size: calc(1.375rem + 1.4vw)
 }
 
 @media (min-width:1200px) {
@@ -282,8 +265,8 @@ h4 {
 
     .h4,
     h4 {
-        font-size: 1.1rem;
-    text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+    font-size: 1.1rem;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
     }
 }
 
@@ -570,59 +553,6 @@ legend {
     }
 }
 
-legend+* {
-    clear: left
-}
-
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-fields-wrapper,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-minute,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-text,
-::-webkit-datetime-edit-year-field {
-    padding: 0
-}
-
-::-webkit-inner-spin-button {
-    height: auto
-}
-
-[type=search] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px
-}
-
-::-webkit-search-decoration {
-    -webkit-appearance: none
-}
-
-::-webkit-color-swatch-wrapper {
-    padding: 0
-}
-
-::-webkit-file-upload-button {
-    font: inherit;
-    -webkit-appearance: button
-}
-
-::file-selector-button {
-    font: inherit;
-    -webkit-appearance: button
-}
-
-output {
-    display: inline-block
-}
-
-iframe {
-    border: 0
-}
-
-summary {
-    display: list-item;
-    cursor: pointer
-}
 
 progress {
     vertical-align: baseline
@@ -12672,11 +12602,11 @@ fieldset:disabled .btn {
         margin-right: 1.5rem !important;
         margin-left: 1.5rem !important
     }
-
+/* 
     .mx-xl-5 {
         margin-right: 3rem !important;
         margin-left: 3rem !important
-    }
+    } */
 
     .mx-xl-auto {
         margin-right: auto !important;
