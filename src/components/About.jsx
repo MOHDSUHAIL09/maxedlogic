@@ -52,7 +52,7 @@ const About = () => {
                 <div className="feedback">
                   <div className="infu">
                     <img src={clientsImg} alt="Clients" />
-                    <h6 className='paragraph-shadow'>Join our 20+ World class Clients</h6>
+                    <h6 className='paragraph-shadow'>Join our 4+ World class Clients</h6>
                   </div>
                   <div className="infu">
                     <div className="icon-box d-flex align-items-center">

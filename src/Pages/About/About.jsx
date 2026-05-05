@@ -61,7 +61,7 @@ const About = () => {
                 <div className="feedback">
                   <div className="infu">
                     <img src={clientsImg} alt="Clients" />
-                    <h6>Join our 50503+ Satisfied World Clients</h6>
+                    <h6>Join our 4+ Satisfied World Clients</h6>
                   </div>
                   <div className="infu">
                     <div className="icon-box d-flex align-items-center">
@@ -70,7 +70,7 @@ const About = () => {
                       </div>
                       <h6>Global Company</h6>
                     </div>
-                    <p>Our great team of more than to 1400 software experts member.</p>
+                    <p>Our great team of more than to 4 software experts member.</p>
                   </div>
                 </div>
 

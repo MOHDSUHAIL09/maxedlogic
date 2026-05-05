@@ -123,13 +123,7 @@ const Header = () => {
                     </div>
                   </div>
 
-                  {/* <a href="#" className="search-trigger search-icon mb-1">
-                    <FaSearch style={{ fontSize: "18px" }} />
-                  </a> */}
-{/* 
-                  <div className="header-button d-none d-sm-block">
-                    <Link to="about" className="theme-btn black-btn">Explore More</Link>
-                  </div> */}
+
                   <div className="header-button d-none d-lg-block">
                     <div className="" onClick={() => setIsInfoGroupActive(true)}>
                       <div className="theme-btn black-btn">Explore More</div>

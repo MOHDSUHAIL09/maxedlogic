@@ -7,12 +7,10 @@ import Sabout from './Sabout.jsx'
 import Choosesection from './Choosesection.jsx'
 // import Teamsection from './Teamsection'
 import Projects from './Projects.jsx'
-import Clients from './Clients'
+// import Clients from './Clients'
 import Blog from './Blog.jsx'
 import Delivering from './Delivering.jsx'
 import Seo from './Seo.jsx'
-
-
 
 
 const Home = () => {
@@ -25,7 +23,6 @@ const Home = () => {
       />
 
 
-
         <div class="page-wrapper">
     <Hero/>
     <Features/>
@@ -35,7 +32,7 @@ const Home = () => {
     <Choosesection/>
     {/* <Teamsection/> */}
     <Projects/>
-    <Clients/>
+    {/* <Clients/> */}
     <Blog/>
     <Delivering/>
     </div>

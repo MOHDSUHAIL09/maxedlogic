@@ -106,9 +106,11 @@ const Hero = () => {
           <div className="col-xl-6 col-lg-6 col-md-12">
             <div className="hero-image">
             
-              <img src={content.image} alt="Hero" className="img-fluid" />
+              <img  src={content.image} alt="Hero" className="img-fluid mt-2 mt-md-0 mt-lg-0 mt-xl-0"  />
             </div>
           </div>
+
+
         </div>
       </div>
     </section>
